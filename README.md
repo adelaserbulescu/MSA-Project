@@ -1,9 +1,15 @@
 # 📜 History Education App
 ## MSA Project
 
-(<WIP 🏗️ WIP>)
-A Kotlin-based full-stack application designed to manage and visualize information about countries, their media, achievements, and quizzes — all organized within roadmaps and groups.  
-Built with **Ktor** on the backend and **Kotlin** for the frontend.
+### Team Gorjenii
+
+<img width="800" height="467" alt="teamlogo" src="https://github.com/user-attachments/assets/8d4f50ee-b151-43a1-8d00-ee027d6746f2" />
+
+### Team Members
+
+Lintes Claudiu Constantin
+Șerbulescu Adela-Elena
+
 (<WIP 🏗️ WIP>)
 
 ## Quick Links / References
@@ -14,9 +20,6 @@ Database Layout: [https://miro.com/app/board/uXjVJunkexA=/?focusWidget=345876464
 
 ## 🧭 Project Overview
 
-(<WIP 🏗️ WIP>)
-This project aims to provide an interactive platform to explore countries, their roadmaps, related media, and quizzes.  
-Users can view featured media, track achievements, and access country-specific data in a structured and visually appealing way.
 (<WIP 🏗️ WIP>)
 
 ---
