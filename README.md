@@ -3,7 +3,7 @@
 
 ### Team Gorjenii
 
-<img width="800" height="467" alt="teamlogo" src="https://github.com/user-attachments/assets/8d4f50ee-b151-43a1-8d00-ee027d6746f2" />
+<img width="320" height="180" alt="logoteam2" src="https://github.com/user-attachments/assets/6f8e2d49-6d32-4385-b9b9-ae1a2628aa2c" />
 
 ### Team Members
 
