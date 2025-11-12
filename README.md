@@ -7,7 +7,7 @@
 
 ### Team Members
 
-Lintes Claudiu Constantin
+Lintes Claudiu Constantin <br>
 Șerbulescu Adela-Elena
 
 (<WIP 🏗️ WIP>)
