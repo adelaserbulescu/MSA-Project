@@ -10,14 +10,14 @@ Database Layout: [https://miro.com/app/board/uXjVJunkexA=/?focusWidget=345876464
 
 ---
 
-## 🧭 Project Overview 🧭
+## 🧭 Project Overview
 
 This project aims to provide an interactive platform to explore countries, their roadmaps, related media, and quizzes.  
 Users can view featured media, track achievements, and access country-specific data in a structured and visually appealing way.
 
 ---
 
-## ⚙️ Project Requirements ⚙️
+## ⚙️ Project Requirements
 
 - **Kotlin** (Frontend + Backend)
 - **Ktor** Framework
@@ -28,14 +28,14 @@ Users can view featured media, track achievements, and access country-specific d
 
 ---
 
-## 💾 Database Uses 💾
+## 💾 Database Uses
 
 The project uses **MySQL** as its relational database.  
 It stores all relevant data about countries, media, user accounts, achievements, and quizzes.
 
 ---
 
-## 🧩 Database Structure 🧩
+## 🧩 Database Structure
 
 ### **Countries**
 | Column | Type | Description |
@@ -126,10 +126,10 @@ It stores all relevant data about countries, media, user accounts, achievements,
 
 ---
 
-## 🧰 Technologies Used 🧰
+## 🧰 Technologies Used
 
 ### **Database**
-- 💾 MySQL (Locally Hosted) 💾
+- 💾 MySQL (Locally Hosted)
 
 ### **Back-end**
 - 💻 Kotlin  
