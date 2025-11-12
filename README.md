@@ -1,8 +1,10 @@
 # 📜 History Education App
 ## MSA Project
 
+(<WIP 🏗️ WIP>)
 A Kotlin-based full-stack application designed to manage and visualize information about countries, their media, achievements, and quizzes — all organized within roadmaps and groups.  
 Built with **Ktor** on the backend and **Kotlin** for the frontend.
+(<WIP 🏗️ WIP>)
 
 ## Quick Links / References
 
@@ -12,26 +14,22 @@ Database Layout: [https://miro.com/app/board/uXjVJunkexA=/?focusWidget=345876464
 
 ## 🧭 Project Overview
 
+(<WIP 🏗️ WIP>)
 This project aims to provide an interactive platform to explore countries, their roadmaps, related media, and quizzes.  
 Users can view featured media, track achievements, and access country-specific data in a structured and visually appealing way.
+(<WIP 🏗️ WIP>)
 
 ---
 
 ## ⚙️ Project Requirements
 
-- **Kotlin** (Frontend + Backend)
-- **Ktor** Framework
-- **MySQL** (Locally Hosted)
-- **JDK 17+**
-- **Gradle** or **Maven** build tool
-- **Any IDE** with Kotlin support (IntelliJ IDEA recommended)
+(<WIP 🏗️ WIP>)
 
 ---
 
 ## 💾 Database Uses
 
-The project uses **MySQL** as its relational database.  
-It stores all relevant data about countries, media, user accounts, achievements, and quizzes.
+(<WIP 🏗️ WIP>)
 
 ---
 
