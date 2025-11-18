@@ -1,8 +1,9 @@
+package app.msaproject.core
+
 import io.ktor.server.application.*
 import io.ktor.server.engine.*
 import io.ktor.server.netty.*
 import io.ktor.server.response.*
-import io.ktor.server.request.*
 import io.ktor.server.routing.*
 import io.ktor.server.plugins.contentnegotiation.*
 import io.ktor.serialization.kotlinx.json.*
@@ -34,8 +35,8 @@ fun Application.module() {
         outputFormat = OutputFormat.JSON
     }
 
-    DatabaseFactory.init()
-    DatabaseFactory.check_status()
+    //app.msaproject.core.DatabaseFactory.init()
+    //app.msaproject.core.DatabaseFactory.check_status()
 
     // Routing
     routing {
