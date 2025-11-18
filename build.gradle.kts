@@ -1,8 +1,8 @@
-val ktor_version = "2.3.7"
+val ktor_version = "3.3.2"
 val logback_version = "1.5.13"
 val mysql_version = "8.0.33"
 val exposed_version = "0.53.0"
-val swagger_ui_version = "2.7.2"
+val openapi_version = "5.4.0"
 
 application {
     mainClass.set("io.ktor.server.netty.EngineMain")
@@ -19,17 +19,13 @@ version = "1.0-SNAPSHOT"
 
 repositories {
     mavenCentral()
-    mavenLocal()
-    google()
     maven { url = uri("https://jitpack.io") }
 }
 
 dependencies {
-    // Ktor core + Netty server engine
+    // Ktor
     implementation("io.ktor:ktor-server-core:$ktor_version")
     implementation("io.ktor:ktor-server-netty:$ktor_version")
-
-    // Ktor features
     implementation("io.ktor:ktor-server-content-negotiation:$ktor_version")
     implementation("io.ktor:ktor-serialization-kotlinx-json:$ktor_version")
 
@@ -41,6 +37,12 @@ dependencies {
     implementation("org.jetbrains.exposed:exposed-core:$exposed_version")
     implementation("org.jetbrains.exposed:exposed-dao:$exposed_version")
     implementation("org.jetbrains.exposed:exposed-jdbc:$exposed_version")
+
+    // OpenAPI & Swagger
+    implementation("io.github.smiley4:ktor-openapi:${openapi_version}")
+    implementation("io.github.smiley4:ktor-swagger-ui:${openapi_version}")
+    implementation("io.github.smiley4:ktor-redoc:${openapi_version}")
+
 
     testImplementation("io.ktor:ktor-server-tests:$ktor_version")
     testImplementation(kotlin("test"))
