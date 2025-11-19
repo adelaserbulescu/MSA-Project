@@ -20,8 +20,8 @@ fun Application.module() {
     configureOpenApi();
     configureSerialization()
 
-    app.msaproject.core.database.DatabaseFactory.init();
-    app.msaproject.core.database.DatabaseFactory.check_status()
+    //app.msaproject.core.database.DatabaseFactory.init();
+    //app.msaproject.core.database.DatabaseFactory.check_status()
 
 
 }

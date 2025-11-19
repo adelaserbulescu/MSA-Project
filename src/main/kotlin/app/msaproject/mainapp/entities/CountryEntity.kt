@@ -5,8 +5,8 @@ import org.jetbrains.exposed.sql.javatime.date
 
 object Countries : Table("Countries") {
 
-    val countryId = integer("CountryID").autoIncrement()
-    //val roadmapGroupId = integer("RoadMapGroupID").references() - Use to set up foreign key when you create other entities
+    val countryId = varchar("CountryID",64)
+    val groupId = varchar("GroupID", 64).references(CountryGroups.groupID)
     val name = varchar("Name", 256).uniqueIndex()
     val dateStarted = date("DateStarted").nullable()
     val dateEnded = date("DateEnded").nullable()
