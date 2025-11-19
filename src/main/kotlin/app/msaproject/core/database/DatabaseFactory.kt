@@ -1,7 +1,8 @@
-package app.msaproject.core
+package app.msaproject.core.database
 
 import org.jetbrains.exposed.sql.Database
 import org.jetbrains.exposed.sql.transactions.transaction
+
 
 object DatabaseFactory {
     fun init() {
