@@ -42,7 +42,7 @@ Database Layout: [https://miro.com/app/board/uXjVJunkexA=/?focusWidget=345876464
 | Column | Type | Description |
 |--------|------|-------------|
 | CountryID | VARCHAR (PK) | Unique identifier for each country |
-| RoadMapGroupID | VARCHAR (FK) | Links to CountryGroup |
+| GroupID | VARCHAR (FK) | Links to CountryGroup Table |
 | Name | VARCHAR | Country name |
 | DateStarted | DATE | When the country was added |
 | DateEnded | DATE | When the country was removed (if applicable) |
@@ -67,15 +67,9 @@ Database Layout: [https://miro.com/app/board/uXjVJunkexA=/?focusWidget=345876464
 | Column | Type | Description |
 |--------|------|-------------|
 | GroupID | VARCHAR (PK) | Group identifier |
-| CountryID | VARCHAR (FK) | Associated country |
-
----
-
-### **RoadMap**
-| Column | Type | Description |
-|--------|------|-------------|
-| RoadMapID | VARCHAR (PK) | Unique roadmap identifier |
-| Name | VARCHAR | Roadmap name |
+| GroupName | VARCHAR | Group Name |
+| GroupDesc | VARCHAR | Group Description |
+| GroupType | VARCHAR/Enum | Group Type |
 | DateStarted | DATE | Start date |
 | DateEnded | DATE | End date |
 | StillExists | BOOLEAN | Indicates if roadmap is active |
