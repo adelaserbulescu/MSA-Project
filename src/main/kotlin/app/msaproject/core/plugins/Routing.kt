@@ -55,6 +55,5 @@ fun Application.configureRouting() {
         countryRoutes()
         mediaRoutes()
         countryGroupRoutes()
-        countryRoadMapRoutes()
     }
 }
