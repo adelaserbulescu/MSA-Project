@@ -42,7 +42,8 @@ Database Layout: [https://miro.com/app/board/uXjVJunkexA=/?focusWidget=345876464
 | Column | Type | Description |
 |--------|------|-------------|
 | CountryID | VARCHAR (PK) | Unique identifier for each country |
-| RoadMapGroupID | VARCHAR (FK) | Links to CountryGroup |
+| GroupID | VARCHAR (FK) | Links to CountryGroup Table |
+| RoadMapGroupID | VARCHAR (FK) | Links to RoadMap Table |
 | Name | VARCHAR | Country name |
 | DateStarted | DATE | When the country was added |
 | DateEnded | DATE | When the country was removed (if applicable) |
@@ -67,6 +68,9 @@ Database Layout: [https://miro.com/app/board/uXjVJunkexA=/?focusWidget=345876464
 | Column | Type | Description |
 |--------|------|-------------|
 | GroupID | VARCHAR (PK) | Group identifier |
+| GroupName | VARCHAR | Group Name |
+| GroupDesc | VARCHAR | Group Description |
+| GroupType | VARCHAR/Enum | Group Type |
 | CountryID | VARCHAR (FK) | Associated country |
 
 ---
