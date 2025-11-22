@@ -2,22 +2,21 @@ package app.msaproject.mainapp.repositories.implementations
 
 import app.msaproject.mainapp.dtos.CountryDTO
 import app.msaproject.mainapp.repositories.interfaces.CountryRepository
-import kotlinx.coroutines.delay
 
 class CountryRepositoryImpl : CountryRepository {
 
     private val fakeCountries = listOf(
         CountryDTO(
-            countryId = "USA",
-            roadmapGroupId = "G1",
+            countryID = 1,
+            groupID = 1,
             name = "United States",
             stillExists = true,
             flagEmoji = "🇺🇸",
             hexColor = "#FF0000"
         ),
         CountryDTO(
-            countryId = "DE",
-            roadmapGroupId = "G2",
+            countryID = 2,
+            groupID = 2,
             name = "Germany",
             stillExists = true,
             flagEmoji = "🇩🇪",
@@ -29,7 +28,7 @@ class CountryRepositoryImpl : CountryRepository {
         return fakeCountries
     }
 
-    override suspend fun getById(id: String): CountryDTO? {
-        return fakeCountries.find { it.countryId == id }
+    override suspend fun getById(id: Int): CountryDTO? {
+        return fakeCountries.find { it.countryID == id }
     }
 }

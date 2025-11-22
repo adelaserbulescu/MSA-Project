@@ -40,7 +40,7 @@ fun Route.countryRoutes() {
             }
         }) {
             val id = call.parameters["id"]!!
-            call.respond(countryService.getCountryById(id) ?: "Not Found")
+            call.respondText("Returning country with ID $id (placeholder)")
         }
     }
 }

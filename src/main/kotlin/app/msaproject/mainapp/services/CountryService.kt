@@ -11,7 +11,7 @@ class CountryService(
         return repository.getAll()
     }
 
-    suspend fun getCountryById(id: String): CountryDTO? {
+    suspend fun getCountryById(id: Int): CountryDTO? {
         return repository.getById(id)
     }
 }

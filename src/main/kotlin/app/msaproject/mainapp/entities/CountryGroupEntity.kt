@@ -13,7 +13,7 @@ enum class GroupType {
 
 object CountryGroups : Table("CountryGroups") {
 
-    val groupID = varchar("groupID", 64)
+    val groupID = integer("groupID").autoIncrement()
     val groupName = varchar("groupName", 256)
     val groupDesc = varchar("groupDesc", 1024).nullable()
     val groupType = enumerationByName<GroupType>("groupType", 32).nullable()

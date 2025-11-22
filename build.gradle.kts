@@ -11,6 +11,7 @@ application {
 plugins {
     kotlin("jvm") version "2.2.20"
     id("io.ktor.plugin") version "3.0.0"
+    id("org.jetbrains.kotlin.plugin.serialization") version "2.2.20"
     application
 }
 

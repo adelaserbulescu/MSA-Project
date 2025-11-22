@@ -5,8 +5,8 @@ import org.jetbrains.exposed.sql.javatime.date
 
 object Countries : Table("Countries") {
 
-    val countryId = varchar("CountryID",64)
-    val groupId = varchar("GroupID", 64).references(CountryGroups.groupID)
+    val countryID = integer("CountryID").autoIncrement();
+    val groupID = integer("GroupID").references(CountryGroups.groupID)
     val name = varchar("Name", 256).uniqueIndex()
     val dateStarted = date("DateStarted").nullable()
     val dateEnded = date("DateEnded").nullable()
@@ -15,5 +15,5 @@ object Countries : Table("Countries") {
     val flagEmoji = varchar("FlagEmoji", 16).nullable()
     val hexColor = varchar("HexColor", 16).nullable()
 
-    override val primaryKey = PrimaryKey(countryId)
+    override val primaryKey = PrimaryKey(countryID)
 }
