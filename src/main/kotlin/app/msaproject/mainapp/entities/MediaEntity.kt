@@ -4,17 +4,18 @@ import org.jetbrains.exposed.sql.*
 
 enum class MediaType {
     IMAGE,
-    LINK,
+    PAGE,
+    VIDEO,
     ROUTE,
-    OTHERS
+    OTHER
 }
 
-object Media : Table("Media") {
+object MediaEntity : Table("Media") {
 
     val mediaID = integer("MediaID").autoIncrement()
-    val countryID = integer("CountryID").references(Countries.countryID)
-    val mediaType = enumerationByName<MediaType>("MediaType", 32).nullable()
-    val mediaPath = varchar("MediaPath", 512).nullable()
+    val countryID = integer("CountryID").references(CountryEntity.countryID)
+    val mediaType = enumerationByName<MediaType>("MediaType", 256).default(MediaType.OTHER)
+    val mediaPath = varchar("MediaPath", 512)
 
     override val primaryKey = PrimaryKey(mediaID)
 }

@@ -11,12 +11,12 @@ enum class GroupType {
     CUSTOM,
 }
 
-object CountryGroups : Table("CountryGroups") {
+object CountryGroupEntity : Table("CountryGroups") {
 
     val groupID = integer("groupID").autoIncrement()
     val groupName = varchar("groupName", 256)
-    val groupDesc = varchar("groupDesc", 1024).nullable()
-    val groupType = enumerationByName<GroupType>("groupType", 32).nullable()
+    val groupDescription = varchar("groupDescription", 1024).nullable()
+    val groupType = enumerationByName<GroupType>("groupType", 256).default(GroupType.OTHER)
     val dateStarted = date("DateStarted").nullable()
     val dateEnded = date("DateEnded").nullable()
     val stillExists = bool("StillExists")

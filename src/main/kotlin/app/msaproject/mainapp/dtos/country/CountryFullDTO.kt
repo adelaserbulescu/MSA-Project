@@ -1,9 +1,9 @@
-package app.msaproject.mainapp.dtos
+package app.msaproject.mainapp.dtos.country
 
 import kotlinx.serialization.Serializable
 
 @Serializable
-data class CountryDTO(
+data class CountryFullDTO(
     val countryID: Int,
     val groupID: Int,
     val name: String,
@@ -11,6 +11,5 @@ data class CountryDTO(
     val dateEnded: String? = null,
     val stillExists: Boolean,
     val flagImagePath: String? = null,
-    val flagEmoji: String? = null,
     val hexColor: String? = null
 )

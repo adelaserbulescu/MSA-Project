@@ -1,34 +1,32 @@
 package app.msaproject.mainapp.repositories.implementations
 
-import app.msaproject.mainapp.dtos.CountryDTO
+import app.msaproject.mainapp.dtos.country.CountryFullDTO
 import app.msaproject.mainapp.repositories.interfaces.CountryRepository
 
 class CountryRepositoryImpl : CountryRepository {
 
     private val fakeCountries = listOf(
-        CountryDTO(
+        CountryFullDTO(
             countryID = 1,
             groupID = 1,
             name = "United States",
             stillExists = true,
-            flagEmoji = "🇺🇸",
             hexColor = "#FF0000"
         ),
-        CountryDTO(
+        CountryFullDTO(
             countryID = 2,
             groupID = 2,
             name = "Germany",
             stillExists = true,
-            flagEmoji = "🇩🇪",
             hexColor = "#000000"
         )
     )
 
-    override suspend fun getAll(): List<CountryDTO> {
+    override suspend fun getAll(): List<CountryFullDTO> {
         return fakeCountries
     }
 
-    override suspend fun getById(id: Int): CountryDTO? {
+    override suspend fun getById(id: Int): CountryFullDTO? {
         return fakeCountries.find { it.countryID == id }
     }
 }
