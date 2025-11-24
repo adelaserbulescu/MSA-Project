@@ -38,43 +38,73 @@ Database Layout: [https://miro.com/app/board/uXjVJunkexA=/?focusWidget=345876464
 
 ## 🧩 Database Structure
 
+#### >> 📑 Main-App
+
 ### **Countries**
-| Column | Type | Description |
-|--------|------|-------------|
-| CountryID | VARCHAR (PK) | Unique identifier for each country |
-| GroupID | VARCHAR (FK) | Links to CountryGroup Table |
-| Name | VARCHAR | Country name |
-| DateStarted | DATE | When the country was added |
-| DateEnded | DATE | When the country was removed (if applicable) |
-| StillExists | BOOLEAN | True if the country still exists |
-| FlagImagePath | VARCHAR | Path to country flag image |
-| FlagEmoji | VARCHAR | Emoji representation of the flag |
-| HexColor | VARCHAR | Associated color (for UI themes) |
+| Column        | Type         | Description                        | Attributes                                |
+| ------------- | ------------ | ---------------------------------- | ----------------------------------------- |
+| countryID     | INTEGER      | Unique identifier for each country | `.autoIncrement()`, `PrimaryKey`          |
+| groupID       | INTEGER      | Links to CountryGroup table        | `.references(CountryGroupEntity.groupID)` |
+| countryName   | VARCHAR(256) | Country name                       | `.uniqueIndex()`                          |
+| dateStarted   | DATE         | When the country was added         | `.nullable()`                             |
+| dateEnded     | DATE         | When the country was removed       | `.nullable()`                             |
+| stillExists   | BOOLEAN      | True if the country still exists   | —                                         |
+| flagImagePath | VARCHAR(512) | Path to country flag image         | `.nullable()`                             |
+| hexColor      | VARCHAR(16)  | Associated color (for UI themes)   | `.nullable()`                             |
 
 ---
 
-### **Media**
-| Column | Type | Description |
-|--------|------|-------------|
-| MediaID | VARCHAR (PK) | Unique media identifier |
-| CountryID | VARCHAR (FK) | Country related to the media |
-| MediaType | ENUM('image','link','route') | Type of media |
-| ValuePath | VARCHAR | File path or URL to the media |
+### **CountryGroups**
+| Column           | Type            | Description                              | Attributes                       |
+| ---------------- | --------------- | ---------------------------------------- | -------------------------------- |
+| groupID          | INTEGER         | Unique identifier for each country group | `.autoIncrement()`, `PrimaryKey` |
+| groupName        | VARCHAR(256)    | Name of the group                        | —                                |
+| groupDescription | VARCHAR(1024)   | Optional description                     | `.nullable()`                    |
+| groupType        | ENUM(GroupType) | Type of group                            | `.default(GroupType.OTHER)`      |
+| dateStarted      | DATE            | Start date of group                      | `.nullable()`                    |
+| dateEnded        | DATE            | End date of group                        | `.nullable()`                    |
+| stillExists      | BOOLEAN         | True if group still exists               | —                                |
 
 ---
 
-### **CountryGroup**
-| Column | Type | Description |
-|--------|------|-------------|
-| GroupID | VARCHAR (PK) | Group identifier |
-| GroupName | VARCHAR | Group Name |
-| GroupDesc | VARCHAR | Group Description |
-| GroupType | VARCHAR/Enum | Group Type |
-| DateStarted | DATE | Start date |
-| DateEnded | DATE | End date |
-| StillExists | BOOLEAN | Indicates if roadmap is active |
+### **HtmlContents**
+| Column               | Type                  | Description                                       | Attributes                                   |
+| -------------------- | --------------------- | ------------------------------------------------- | -------------------------------------------- |
+| htmlContentID        | INTEGER               | Unique ID for HTML content                        | `.autoIncrement()`, `PrimaryKey`             |
+| countryID            | INTEGER               | Country reference                                 | `.references(CountryEntity.countryID)`       |
+| contentHtml          | TEXT                  | HTML content                                      | —                                            |
+| contentType          | ENUM(HtmlContentType) | Type of content                                   | `.default(HtmlContentType.OTHER)`            |
+| version              | INTEGER               | Version number                                    | `.default(1)`                                |
+| pageIndex            | INTEGER               | Page index                                        | `.default(0)`                                |
+| pageSource           | VARCHAR(256)          | Optional page source                              | `.nullable()`                                |
+| dateAdded            | DATE                  | When the content was added                        | —                                            |
+| uniqueVersionPerPage | —                     | Enforces uniqueness of version per country & page | `uniqueIndex(countryID, pageIndex, version)` |
 
 ---
+
+### **Medias**
+| Column    | Type            | Description           | Attributes                             |
+| --------- | --------------- | --------------------- | -------------------------------------- |
+| mediaID   | INTEGER         | Unique media entry ID | `.autoIncrement()`, `PrimaryKey`       |
+| countryID | INTEGER         | Country reference     | `.references(CountryEntity.countryID)` |
+| mediaType | ENUM(MediaType) | Type of media         | `.default(MediaType.OTHER)`            |
+| mediaPath | VARCHAR(512)    | Path or URL of media  | —                                      |
+
+---
+
+### **Enum Used**
+| Enum            | Values                                                 | Description                           |
+| --------------- | ------------------------------------------------------ | ------------------------------------- |
+| CountryType     | —                                                      | Currently unused, reserved for future |
+| GroupType       | ALLIANCE, AREA, ROADMAP, OTHER, CUSTOM                 | Type of country group                 |
+| HtmlContentType | MAIN, GENERAL, HISTORY, CULTURE, SCIENCE, EVENT, OTHER | Type of HTML content for country      |
+| MediaType       | IMAGE, PAGE, VIDEO, ROUTE, OTHER                       | Type of media (image, video, etc.)    |
+
+---
+
+#### >> 🔒 Accounts & Authentification
+
+## Account
 
 ### **Accounts**
 | Column | Type | Description |
@@ -97,6 +127,8 @@ Database Layout: [https://miro.com/app/board/uXjVJunkexA=/?focusWidget=345876464
 | ImageLink | VARCHAR | Related image link |
 
 ---
+
+#### >> 📄 Quizess
 
 ### **Quizzes**
 | Column | Type | Description |
