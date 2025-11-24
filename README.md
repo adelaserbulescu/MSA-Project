@@ -46,8 +46,8 @@ Database Layout: [https://miro.com/app/board/uXjVJunkexA=/?focusWidget=345876464
 | countryID     | INTEGER      | Unique identifier for each country | `.autoIncrement()`, `PrimaryKey`          |
 | groupID       | INTEGER      | Links to CountryGroup table        | `.references(CountryGroupEntity.groupID)` |
 | countryName   | VARCHAR(256) | Country name                       | `.uniqueIndex()`                          |
-| dateStarted   | DATE         | When the country was added         | `.nullable()`                             |
-| dateEnded     | DATE         | When the country was removed       | `.nullable()`                             |
+| dateStarted   | DATE         | When the country was founded       | `.nullable()`                             |
+| dateEnded     | DATE         | When the country was dissolved     | `.nullable()`                             |
 | stillExists   | BOOLEAN      | True if the country still exists   | —                                         |
 | flagImagePath | VARCHAR(512) | Path to country flag image         | `.nullable()`                             |
 | hexColor      | VARCHAR(16)  | Associated color (for UI themes)   | `.nullable()`                             |
