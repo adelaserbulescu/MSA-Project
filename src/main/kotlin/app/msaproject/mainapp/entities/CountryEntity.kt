@@ -9,7 +9,7 @@ object CountryEntity : Table("Countries") {
 
     val countryID = integer("CountryID").autoIncrement();
     val groupID = integer("GroupID").references(CountryGroupEntity.groupID)
-    val name = varchar("Name", 256).uniqueIndex()
+    val countryName = varchar("CountryName", 256).uniqueIndex()
     val dateStarted = date("DateStarted").nullable()
     val dateEnded = date("DateEnded").nullable()
     val stillExists = bool("StillExists")

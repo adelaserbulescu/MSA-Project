@@ -5,7 +5,7 @@ import kotlinx.serialization.Serializable
 @Serializable
 data class CountrySimpleDTO(
     val countryID: Int,
-    val name: String,
+    val countryName: String,
     val flagImagePath: String? = null,
     val hexColor: String? = null
 )

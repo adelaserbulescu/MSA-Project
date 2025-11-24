@@ -9,7 +9,7 @@ fun ResultRow.toCountryFullDTO(): CountryFullDTO {
     return CountryFullDTO(
         countryID = this[CountryEntity.countryID],
         groupID = this[CountryEntity.groupID],
-        name = this[CountryEntity.name],
+        countryName = this[CountryEntity.countryName],
         dateStarted = this[CountryEntity.dateStarted]?.format(DateTimeFormatter.ISO_LOCAL_DATE),
         dateEnded = this[CountryEntity.dateEnded]?.format(DateTimeFormatter.ISO_LOCAL_DATE),
         stillExists = this[CountryEntity.stillExists],

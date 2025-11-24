@@ -7,7 +7,6 @@ import app.msaproject.core.plugins.configureSerialization
 import io.ktor.server.application.*
 import io.ktor.server.engine.*
 import io.ktor.server.netty.*
-import javax.xml.crypto.Data
 
 
 fun main() {
@@ -20,8 +19,8 @@ fun Application.module() {
     configureOpenApi();
     configureSerialization()
 
-    //app.msaproject.core.database.DatabaseFactory.init();
-    //app.msaproject.core.database.DatabaseFactory.check_status()
+    //DatabaseFactory.init();
+    //DatabaseFactory.check_status()
 
 
 }

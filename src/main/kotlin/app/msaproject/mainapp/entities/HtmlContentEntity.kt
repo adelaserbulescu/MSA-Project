@@ -5,6 +5,7 @@ import org.jetbrains.exposed.sql.javatime.date
 
 enum class HtmlContentType{
     MAIN,
+    GENERAL,
     HISTORY,
     CULTURE,
     SCIENCE,

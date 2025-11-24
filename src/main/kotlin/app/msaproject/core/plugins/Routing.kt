@@ -23,37 +23,9 @@ fun Application.configureRouting() {
             swaggerUI("/api.json")
         }
 
-
-        // Examples
-        get("/hello-world", {
-            description = "A simple hello world endpoint"
-            request {
-                queryParameter<String>("name") {
-                    description = "The name to greet"
-                    required = false
-                }
-            }
-            response {
-                code(HttpStatusCode.OK) {
-                    description = "Returns a greeting message"
-                    body<String>()
-                }
-            }
-        }) {
-            val name = call.request.queryParameters["name"] ?: "World"
-            call.respondText("Hello $name!")
-        }
-
-        get("/") {
-            call.respondText("Hello from Ktor backend!")
-        }
-
-        get("/hello") {
-            call.respondText("Hello from Ktor backend! -Second Endpoint-")
-        }
-
         countryRoutes()
         mediaRoutes()
         countryGroupRoutes()
+        htmlContentRoutes()
     }
 }

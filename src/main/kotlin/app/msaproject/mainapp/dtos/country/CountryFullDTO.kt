@@ -6,7 +6,7 @@ import kotlinx.serialization.Serializable
 data class CountryFullDTO(
     val countryID: Int,
     val groupID: Int,
-    val name: String,
+    val countryName: String,
     val dateStarted: String? = null,
     val dateEnded: String? = null,
     val stillExists: Boolean,
