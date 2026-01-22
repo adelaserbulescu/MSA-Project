@@ -43,3 +43,89 @@ bin/
 
 ### Mac OS ###
 .DS_Store
+
+### React Native ###
+
+# Node
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+
+# Metro bundler cache
+.expo/
+.expo-shared/
+.expo-packager/
+.expo/web-build/
+.expo/packager-info.json
+.expo/settings.json
+.expo/metro-cache/
+.expo/packager-info.json
+.expo/packager-info.json
+
+# React Native cache
+*.log
+*.tmp
+*.temp
+*.swp
+*.swo
+*.DS_Store
+*.idea/
+*.iml
+
+# Watchman
+.watchmanconfig
+
+# Android
+android/.gradle/
+android/app/build/
+android/build/
+android/local.properties
+android/app/.cxx/
+android/.cxx/
+android/.idea/
+android/.settings/
+android/gradle/
+android/gradlew
+android/gradlew.bat
+android/gradle.properties
+android/gradle-wrapper.jar
+android/gradle-wrapper.properties
+
+# iOS
+ios/Pods/
+ios/build/
+ios/DerivedData/
+ios/*.xcworkspace
+ios/*.xcuserstate
+ios/*.xcuserdata/
+ios/Podfile.lock
+
+# Xcode
+*.pbxuser
+*.mode1v3
+*.mode2v3
+*.perspectivev3
+xcuserdata/
+DerivedData/
+*.xcuserstate
+
+# Fastlane
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots
+fastlane/test_output
+
+# Bundler
+vendor/bundle/
+
+# Misc
+.env
+.env.*
+*.keystore
+*.jks
+*.p12
+*.key
+*.mobileprovision
+*.orig
