@@ -6,4 +6,6 @@ object PaginationConfig {
     const val countryGroupPageLimit = 20
     const val mediaPageLimit = 20
     const val htmlContentPageLimit = 20
+    const val quizPageLimit = 20
+    const val quizQuestionPageLimit = 20
 }

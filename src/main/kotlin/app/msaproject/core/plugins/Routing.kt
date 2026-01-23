@@ -27,5 +27,7 @@ fun Application.configureRouting() {
         mediaRoutes()
         countryGroupRoutes()
         htmlContentRoutes()
+        quizRoutes()
+        quizQuestionRoutes()
     }
 }
