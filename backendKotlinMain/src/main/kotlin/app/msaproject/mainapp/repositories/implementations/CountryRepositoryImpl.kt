@@ -3,21 +3,28 @@ package app.msaproject.mainapp.repositories.implementations
 import app.msaproject.mainapp.configs.PaginationConfig
 import app.msaproject.mainapp.dtos.country.CountryFullDTO
 import app.msaproject.mainapp.dtos.pagination.PaginatedResponseDTO
-import app.msaproject.mainapp.dtos_mocks.country.MockedCountryData
+import app.msaproject.mainapp.dtos_formatters.toCountryFullDTO
+import app.msaproject.mainapp.entities.CountryEntity
 import app.msaproject.mainapp.repositories.interfaces.CountryRepository
 import app.msaproject.mainapp.utils.PaginationUtils
+import org.jetbrains.exposed.sql.*
+import org.jetbrains.exposed.sql.transactions.transaction
+import java.time.LocalDate
 
 class CountryRepositoryImpl : CountryRepository {
 
-    private val countries = MockedCountryData.countries
+    override suspend fun getAll(): List<CountryFullDTO> =
+        transaction {
+            CountryEntity.selectAll().map { it.toCountryFullDTO() }
+        }
 
-    override suspend fun getAll(): List<CountryFullDTO> {
-        return countries
-    }
-
-    override suspend fun getByCountryID(countryID: Int): CountryFullDTO? {
-        return countries.find { it.countryID == countryID }
-    }
+    override suspend fun getByCountryID(countryID: Int): CountryFullDTO? =
+        transaction {
+            CountryEntity
+                .select { CountryEntity.countryID eq countryID }
+                .map { it.toCountryFullDTO() }
+                .singleOrNull()
+        }
 
     override suspend fun getFiltered(
         countryName: String?,
@@ -32,59 +39,54 @@ class CountryRepositoryImpl : CountryRepository {
         page: Int?
     ): PaginatedResponseDTO<CountryFullDTO> {
 
-        val fixedPageSize = PaginationConfig.countryPageLimit
+        return transaction {
 
-        var result = countries.filter { c ->
+            val query = CountryEntity.selectAll()
 
-            val nameMatches = countryName?.let { c.countryName.contains(it, ignoreCase = true) } ?: true
+            if (countryName != null)
+                query.andWhere { CountryEntity.countryName like "%$countryName%" }
 
-            val groupMatches = groupID?.let { c.groupID == it } ?: true
+            if (groupID != null)
+                query.andWhere { CountryEntity.groupID eq groupID }
 
-            val stillExistsMatches = stillExists?.let { c.stillExists == it } ?: true
+            if (stillExists != null)
+                query.andWhere { CountryEntity.stillExists eq stillExists }
 
-            val afterMatches = afterDate?.let {
-                c.dateStarted?.let { ds -> ds >= it } ?: false
-            } ?: true
+            val after = afterDate?.let { LocalDate.parse(it) }
+            if (after != null)
+                query.andWhere { CountryEntity.dateStarted greaterEq after }
 
-            val beforeMatches = beforeDate?.let {
-                c.dateStarted?.let { ds -> ds <= it } ?: false
-            } ?: true
+            val before = beforeDate?.let { LocalDate.parse(it) }
+            if (before != null)
+                query.andWhere { CountryEntity.dateStarted lessEq before }
 
-            val betweenMatches = if (betweenStart != null && betweenEnd != null) {
-                c.dateStarted?.let { ds ->
-                    ds >= betweenStart && ds <= betweenEnd
-                } ?: false
-            } else true
+            val betweenStartDate = betweenStart?.let { LocalDate.parse(it) }
+            val betweenEndDate = betweenEnd?.let { LocalDate.parse(it) }
+            if (betweenStartDate != null && betweenEndDate != null)
+                query.andWhere {
+                    (CountryEntity.dateStarted greaterEq betweenStartDate) and
+                            (CountryEntity.dateStarted lessEq betweenEndDate)
+                }
 
-            nameMatches &&
-                    groupMatches &&
-                    stillExistsMatches &&
-                    afterMatches &&
-                    beforeMatches &&
-                    betweenMatches
-        }
 
-        // Sorting
-        if (sort != null) {
-            result = when (sort) {
-                "countryName" -> result.sortedBy { it.countryName }
-                "dateStarted" -> result.sortedBy { it.dateStarted }
-                "dateEnded"   -> result.sortedBy { it.dateEnded }
-                "groupID"     -> result.sortedBy { it.groupID }
-                else -> result // ignore invalid sort parameter
+            val sorted = when (sort) {
+                "countryName" -> query.orderBy(CountryEntity.countryName to sortOrder(order))
+                "dateStarted" -> query.orderBy(CountryEntity.dateStarted to sortOrder(order))
+                "dateEnded"   -> query.orderBy(CountryEntity.dateEnded to sortOrder(order))
+                "groupID"     -> query.orderBy(CountryEntity.groupID to sortOrder(order))
+                else -> query
             }
 
-            if (order == "desc") {
-                result = result.reversed()
-            }
+            val list = sorted.map { it.toCountryFullDTO() }
+
+            PaginationUtils.paginate(
+                list = list,
+                page = page,
+                pageSize = PaginationConfig.countryPageLimit
+            )
         }
-
-        // Pagination
-        return PaginationUtils.paginate(
-            list = result,
-            page = page,
-            pageSize = PaginationConfig.countryPageLimit,
-        )
-
     }
+
+    private fun sortOrder(order: String?) =
+        if (order == "desc") SortOrder.DESC else SortOrder.ASC
 }

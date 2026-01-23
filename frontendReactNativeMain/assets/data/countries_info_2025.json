@@ -2,7 +2,7 @@
   {
     "country": "China",
     "demonym": "Chinese",
-    "id": "CN",
+    "tag": "CN",
     "iso2": "CN",
     "tld": ".cn",
     "currency": "Chinese Yuan",
@@ -22,7 +22,7 @@
   {
     "country": "India",
     "demonym": "Indian",
-    "id": "IN",
+    "tag": "IN",
     "iso2": "IN",
     "tld": ".in",
     "currency": "Indian Rupee",
@@ -42,7 +42,7 @@
   {
     "country": "United States",
     "demonym": "American",
-    "id": "US",
+    "tag": "US",
     "iso2": "US",
     "tld": ".us",
     "currency": "United States Dollar",
@@ -62,7 +62,7 @@
   {
     "country": "Indonesia",
     "demonym": "Indonesian",
-    "id": "ID",
+    "tag": "ID",
     "iso2": "ID",
     "tld": ".id",
     "currency": "Rupiah",
@@ -82,7 +82,7 @@
   {
     "country": "Pakistan",
     "demonym": "Pakistani",
-    "id": "PK",
+    "tag": "PK",
     "iso2": "PK",
     "tld": ".pk",
     "currency": "Pakistani Rupee",
@@ -102,7 +102,7 @@
   {
     "country": "Nigeria",
     "demonym": "Nigerian",
-    "id": "NG",
+    "tag": "NG",
     "iso2": "NG",
     "tld": ".ng",
     "currency": "Naira",
@@ -122,7 +122,7 @@
   {
     "country": "Brazil",
     "demonym": "Brazilian",
-    "id": "BR",
+    "tag": "BR",
     "iso2": "BR",
     "tld": ".br",
     "currency": "Brazilian Real",
@@ -142,7 +142,7 @@
   {
     "country": "Bangladesh",
     "demonym": "Bangladeshi",
-    "id": "BD",
+    "tag": "BD",
     "iso2": "BD",
     "tld": ".bd",
     "currency": "Bangladeshi Taka",
@@ -162,7 +162,7 @@
   {
     "country": "Russia",
     "demonym": "Russian",
-    "id": "RU",
+    "tag": "RU",
     "iso2": "RU",
     "tld": ".ru",
     "currency": "Russian Ruble",
@@ -182,7 +182,7 @@
   {
     "country": "Mexico",
     "demonym": "Mexican",
-    "id": "MX",
+    "tag": "MX",
     "iso2": "MX",
     "tld": ".mx",
     "currency": "Mexican Peso",
@@ -202,7 +202,7 @@
   {
     "country": "Japan",
     "demonym": "Japanese",
-    "id": "JP",
+    "tag": "JP",
     "iso2": "JP",
     "tld": ".jp",
     "currency": "Japanese Yen",
@@ -222,7 +222,7 @@
   {
     "country": "Ethiopia",
     "demonym": "Ethiopian",
-    "id": "ET",
+    "tag": "ET",
     "iso2": "ET",
     "tld": ".et",
     "currency": "Bir",
@@ -242,7 +242,7 @@
   {
     "country": "Philippines",
     "demonym": "Philippine",
-    "id": "PH",
+    "tag": "PH",
     "iso2": "PH",
     "tld": ".ph",
     "currency": "Philippine Peso",
@@ -262,7 +262,7 @@
   {
     "country": "Democratic Republic of the Congo",
     "demonym": "Congolese",
-    "id": "CD",
+    "tag": "CD",
     "iso2": "CD",
     "tld": ".cd",
     "currency": "Congolese Franc",
@@ -282,7 +282,7 @@
   {
     "country": "Egypt",
     "demonym": "Egyptian",
-    "id": "EG",
+    "tag": "EG",
     "iso2": "EG",
     "tld": ".eg",
     "currency": "Egyptian Pound",
@@ -302,7 +302,7 @@
   {
     "country": "Vietnam",
     "demonym": "Vietnamese",
-    "id": "VN",
+    "tag": "VN",
     "iso2": "VN",
     "tld": ".vn",
     "currency": "Vietnamese Dong",
@@ -322,7 +322,7 @@
   {
     "country": "Iran",
     "demonym": "Iranian",
-    "id": "IR",
+    "tag": "IR",
     "iso2": "IR",
     "tld": ".ir",
     "currency": "Iranian Rial",
@@ -342,7 +342,7 @@
   {
     "country": "Germany",
     "demonym": "German",
-    "id": "DE",
+    "tag": "DE",
     "iso2": "DE",
     "tld": ".de",
     "currency": "Euro",
@@ -362,7 +362,7 @@
   {
     "country": "Turkey",
     "demonym": "Turkish",
-    "id": "TR",
+    "tag": "TR",
     "iso2": "TR",
     "tld": ".tr",
     "currency": "Turkish Lira",
@@ -382,7 +382,7 @@
   {
     "country": "Thailand",
     "demonym": "Thai",
-    "id": "TH",
+    "tag": "TH",
     "iso2": "TH",
     "tld": ".th",
     "currency": "Thai Baht",
@@ -402,7 +402,7 @@
   {
     "country": "France",
     "demonym": "French",
-    "id": "FR",
+    "tag": "FR",
     "iso2": "FR",
     "tld": ".fr",
     "currency": "Euro",
@@ -422,7 +422,7 @@
   {
     "country": "United Kingdom",
     "demonym": "British",
-    "id": "GB",
+    "tag": "GB",
     "iso2": "GB",
     "tld": ".uk",
     "currency": "British Pound",
@@ -442,7 +442,7 @@
   {
     "country": "Tanzania",
     "demonym": "Tanzanian",
-    "id": "TZ",
+    "tag": "TZ",
     "iso2": "TZ",
     "tld": ".tz",
     "currency": "Tanzanian Shilling",
@@ -462,7 +462,7 @@
   {
     "country": "Italy",
     "demonym": "Italian",
-    "id": "IT",
+    "tag": "IT",
     "iso2": "IT",
     "tld": ".it",
     "currency": "Euro",
@@ -482,7 +482,7 @@
   {
     "country": "South Africa",
     "demonym": "South African",
-    "id": "ZA",
+    "tag": "ZA",
     "iso2": "ZA",
     "tld": ".za",
     "currency": "Rand",
@@ -502,7 +502,7 @@
   {
     "country": "Myanmar",
     "demonym": "Burmese",
-    "id": "MM",
+    "tag": "MM",
     "iso2": "MM",
     "tld": ".mm",
     "currency": "Kyat",
@@ -522,7 +522,7 @@
   {
     "country": "Kenya",
     "demonym": "Kenyan",
-    "id": "KE",
+    "tag": "KE",
     "iso2": "KE",
     "tld": ".ke",
     "currency": "Kenyan Shilling",
@@ -542,7 +542,7 @@
   {
     "country": "South Korea",
     "demonym": "South Korean",
-    "id": "KR",
+    "tag": "KR",
     "iso2": "KR",
     "tld": ".kr",
     "currency": "South Korean Won",
@@ -562,7 +562,7 @@
   {
     "country": "Colombia",
     "demonym": "Colombian",
-    "id": "CO",
+    "tag": "CO",
     "iso2": "CO",
     "tld": ".co",
     "currency": "Colombian Peso",
@@ -582,7 +582,7 @@
   {
     "country": "Sudan",
     "demonym": "Sudanese",
-    "id": "SD",
+    "tag": "SD",
     "iso2": "SD",
     "tld": ".sd",
     "currency": "Sudanese Pound",
@@ -602,7 +602,7 @@
   {
     "country": "Uganda",
     "demonym": "Ugandan",
-    "id": "UG",
+    "tag": "UG",
     "iso2": "UG",
     "tld": ".ug",
     "currency": "Ugandan Shilling",
@@ -622,7 +622,7 @@
   {
     "country": "Spain",
     "demonym": "Spanish",
-    "id": "ES",
+    "tag": "ES",
     "iso2": "ES",
     "tld": ".es",
     "currency": "Euro",
@@ -642,7 +642,7 @@
   {
     "country": "Argentina",
     "demonym": "Argentinian",
-    "id": "AR",
+    "tag": "AR",
     "iso2": "AR",
     "tld": ".ar",
     "currency": "Argentine Convertible Peso",
@@ -662,7 +662,7 @@
   {
     "country": "Algeria",
     "demonym": "Algerian",
-    "id": "DZ",
+    "tag": "DZ",
     "iso2": "DZ",
     "tld": ".dz",
     "currency": "Algerian Dinar",
@@ -682,7 +682,7 @@
   {
     "country": "Ukraine",
     "demonym": "Ukrainian",
-    "id": "UA",
+    "tag": "UA",
     "iso2": "UA",
     "tld": ".ua",
     "currency": "Hryvnia",
@@ -702,7 +702,7 @@
   {
     "country": "Iraq",
     "demonym": "Iraqi",
-    "id": "IQ",
+    "tag": "IQ",
     "iso2": "IQ",
     "tld": ".iq",
     "currency": "Iraqi Dinar",
@@ -722,7 +722,7 @@
   {
     "country": "Afghanistan",
     "demonym": "Afghan",
-    "id": "AF",
+    "tag": "AF",
     "iso2": "AF",
     "tld": ".af",
     "currency": "Afghani",
@@ -742,7 +742,7 @@
   {
     "country": "Canada",
     "demonym": "Canadian",
-    "id": "CA",
+    "tag": "CA",
     "iso2": "CA",
     "tld": ".ca",
     "currency": "Canadian Dollar",
@@ -762,7 +762,7 @@
   {
     "country": "Poland",
     "demonym": "Polish",
-    "id": "PL",
+    "tag": "PL",
     "iso2": "PL",
     "tld": ".pl",
     "currency": "Polish Zloty",
@@ -782,7 +782,7 @@
   {
     "country": "Morocco",
     "demonym": "Moroccan",
-    "id": "MA",
+    "tag": "MA",
     "iso2": "MA",
     "tld": ".ma",
     "currency": "Moroccan Dirham",
@@ -802,7 +802,7 @@
   {
     "country": "Angola",
     "demonym": "Angolan",
-    "id": "AO",
+    "tag": "AO",
     "iso2": "AO",
     "tld": ".ao",
     "currency": "Kwanza",
@@ -822,7 +822,7 @@
   {
     "country": "Saudi Arabia",
     "demonym": "Saudi Arabian",
-    "id": "SA",
+    "tag": "SA",
     "iso2": "SA",
     "tld": ".sa",
     "currency": "Saudi Riyal",
@@ -842,7 +842,7 @@
   {
     "country": "Malaysia",
     "demonym": "Malaysian",
-    "id": "MY",
+    "tag": "MY",
     "iso2": "MY",
     "tld": ".my",
     "currency": "Malaysian Ringgit",
@@ -862,7 +862,7 @@
   {
     "country": "Ghana",
     "demonym": "Ghanaian",
-    "id": "GH",
+    "tag": "GH",
     "iso2": "GH",
     "tld": ".gh",
     "currency": "Ghana Cedi",
@@ -882,7 +882,7 @@
   {
     "country": "Mozambique",
     "demonym": "Mozambican",
-    "id": "MZ",
+    "tag": "MZ",
     "iso2": "MZ",
     "tld": ".mz",
     "currency": "Mozambican Metical",
@@ -902,7 +902,7 @@
   {
     "country": "Peru",
     "demonym": "Peruvian",
-    "id": "PE",
+    "tag": "PE",
     "iso2": "PE",
     "tld": ".pe",
     "currency": "Nuevo Sol",
@@ -922,7 +922,7 @@
   {
     "country": "Yemen",
     "demonym": "Yemeni",
-    "id": "YE",
+    "tag": "YE",
     "iso2": "YE",
     "tld": ".ye",
     "currency": "Yemeni Rial",
@@ -942,7 +942,7 @@
   {
     "country": "Uzbekistan",
     "demonym": "Uzbekistani",
-    "id": "UZ",
+    "tag": "UZ",
     "iso2": "UZ",
     "tld": ".uz",
     "currency": "Uzbekistani Som",
@@ -962,7 +962,7 @@
   {
     "country": "Nepal",
     "demonym": "Nepalese",
-    "id": "NP",
+    "tag": "NP",
     "iso2": "NP",
     "tld": ".np",
     "currency": "Nepalese Rupee",
@@ -982,7 +982,7 @@
   {
     "country": "Venezuela",
     "demonym": "Venezuelan",
-    "id": "VE",
+    "tag": "VE",
     "iso2": "VE",
     "tld": ".ve",
     "currency": "Sovereign Bolivar",
@@ -1002,7 +1002,7 @@
   {
     "country": "Cameroon",
     "demonym": "Cameroonian",
-    "id": "CM",
+    "tag": "CM",
     "iso2": "CM",
     "tld": ".cm",
     "currency": "Central African Cfa Franc",
@@ -1022,7 +1022,7 @@
   {
     "country": "Ivory Coast",
     "demonym": "Ivoirian",
-    "id": "CI",
+    "tag": "CI",
     "iso2": "CI",
     "tld": ".ci",
     "currency": "West African Cfa Franc",
@@ -1042,7 +1042,7 @@
   {
     "country": "Madagascar",
     "demonym": "Malagasy",
-    "id": "MG",
+    "tag": "MG",
     "iso2": "MG",
     "tld": ".mg",
     "currency": "Ariary",
@@ -1062,7 +1062,7 @@
   {
     "country": "Australia",
     "demonym": "Australian",
-    "id": "AU",
+    "tag": "AU",
     "iso2": "AU",
     "tld": ".au",
     "currency": "Australian Dollar",
@@ -1082,7 +1082,7 @@
   {
     "country": "North Korea",
     "demonym": "North Korean",
-    "id": "KP",
+    "tag": "KP",
     "iso2": "KP",
     "tld": ".kp",
     "currency": "North Korean Won",
@@ -1102,7 +1102,7 @@
   {
     "country": "Niger",
     "demonym": "Nigerien",
-    "id": "NE",
+    "tag": "NE",
     "iso2": "NE",
     "tld": ".ne",
     "currency": "West African Cfa Franc",
@@ -1122,7 +1122,7 @@
   {
     "country": "Taiwan",
     "demonym": "Taiwanese",
-    "id": "TW",
+    "tag": "TW",
     "iso2": "TW",
     "tld": ".tw",
     "currency": "New Taiwan Dollar",
@@ -1142,7 +1142,7 @@
   {
     "country": "Sri Lanka",
     "demonym": "Sri Lankan",
-    "id": "LK",
+    "tag": "LK",
     "iso2": "LK",
     "tld": ".lk",
     "currency": "Sri Lankan Rupee",
@@ -1162,7 +1162,7 @@
   {
     "country": "Syria",
     "demonym": "Syrian",
-    "id": "SY",
+    "tag": "SY",
     "iso2": "SY",
     "tld": ".sy",
     "currency": "Syrian Pound",
@@ -1182,7 +1182,7 @@
   {
     "country": "Burkina Faso",
     "demonym": "Burkinabe",
-    "id": "BF",
+    "tag": "BF",
     "iso2": "BF",
     "tld": ".bf",
     "currency": "West African Cfa Franc",
@@ -1202,7 +1202,7 @@
   {
     "country": "Mali",
     "demonym": "Malian",
-    "id": "ML",
+    "tag": "ML",
     "iso2": "ML",
     "tld": ".ml",
     "currency": "West African Cfa Franc",
@@ -1222,7 +1222,7 @@
   {
     "country": "Malawi",
     "demonym": "Malawian",
-    "id": "MW",
+    "tag": "MW",
     "iso2": "MW",
     "tld": ".mw",
     "currency": "Malawian Kwacha",
@@ -1242,7 +1242,7 @@
   {
     "country": "Zambia",
     "demonym": "Zambian",
-    "id": "ZM",
+    "tag": "ZM",
     "iso2": "ZM",
     "tld": ".zm",
     "currency": "Zambian Kwacha",
@@ -1262,7 +1262,7 @@
   {
     "country": "Kazakhstan",
     "demonym": "Kazakhstani",
-    "id": "KZ",
+    "tag": "KZ",
     "iso2": "KZ",
     "tld": ".kz",
     "currency": "Kazakhstani Tenge",
@@ -1282,7 +1282,7 @@
   {
     "country": "Chile",
     "demonym": "Chilean",
-    "id": "CL",
+    "tag": "CL",
     "iso2": "CL",
     "tld": ".cl",
     "currency": "Chilean Peso",
@@ -1302,7 +1302,7 @@
   {
     "country": "Chad",
     "demonym": "Chadian",
-    "id": "TD",
+    "tag": "TD",
     "iso2": "TD",
     "tld": ".td",
     "currency": "Central African Cfa Franc",
@@ -1322,7 +1322,7 @@
   {
     "country": "Senegal",
     "demonym": "Senegalese",
-    "id": "SN",
+    "tag": "SN",
     "iso2": "SN",
     "tld": ".sn",
     "currency": "West African Cfa Franc",
@@ -1342,7 +1342,7 @@
   {
     "country": "Romania",
     "demonym": "Romanian",
-    "id": "RO",
+    "tag": "RO",
     "iso2": "RO",
     "tld": ".ro",
     "currency": "Romanian Leu",
@@ -1362,7 +1362,7 @@
   {
     "country": "Guatemala",
     "demonym": "Guatemalan",
-    "id": "GT",
+    "tag": "GT",
     "iso2": "GT",
     "tld": ".gt",
     "currency": "Quetzal",
@@ -1382,7 +1382,7 @@
   {
     "country": "Ecuador",
     "demonym": "Ecuadorian",
-    "id": "EC",
+    "tag": "EC",
     "iso2": "EC",
     "tld": ".ec",
     "currency": "United States Dollar",
@@ -1402,7 +1402,7 @@
   {
     "country": "Netherlands",
     "demonym": "Dutch",
-    "id": "NL",
+    "tag": "NL",
     "iso2": "NL",
     "tld": ".nl",
     "currency": "Euro",
@@ -1422,7 +1422,7 @@
   {
     "country": "Cambodia",
     "demonym": "Cambodian",
-    "id": "KH",
+    "tag": "KH",
     "iso2": "KH",
     "tld": ".kh",
     "currency": "Riel",
@@ -1442,7 +1442,7 @@
   {
     "country": "Zimbabwe",
     "demonym": "Zimbabwean",
-    "id": "ZW",
+    "tag": "ZW",
     "iso2": "ZW",
     "tld": ".zw",
     "currency": "Zimbabwean ZiG",
@@ -1462,7 +1462,7 @@
   {
     "country": "Benin",
     "demonym": "Beninese",
-    "id": "BJ",
+    "tag": "BJ",
     "iso2": "BJ",
     "tld": ".bj",
     "currency": "West African Cfa Franc",
@@ -1482,7 +1482,7 @@
   {
     "country": "Guinea",
     "demonym": "Guinean",
-    "id": "GN",
+    "tag": "GN",
     "iso2": "GN",
     "tld": ".gn",
     "currency": "Guinean Franc",
@@ -1502,7 +1502,7 @@
   {
     "country": "Rwanda",
     "demonym": "Rwandese",
-    "id": "RW",
+    "tag": "RW",
     "iso2": "RW",
     "tld": ".rw",
     "currency": "Rwandan Franc",
@@ -1522,7 +1522,7 @@
   {
     "country": "Burundi",
     "demonym": "Burundian",
-    "id": "BI",
+    "tag": "BI",
     "iso2": "BI",
     "tld": ".bi",
     "currency": "Burundian Franc",
@@ -1542,7 +1542,7 @@
   {
     "country": "Somalia",
     "demonym": "Somalian",
-    "id": "SO",
+    "tag": "SO",
     "iso2": "SO",
     "tld": ".so",
     "currency": "Somali Shilling",
@@ -1562,7 +1562,7 @@
   {
     "country": "Bolivia",
     "demonym": "Bolivian",
-    "id": "BO",
+    "tag": "BO",
     "iso2": "BO",
     "tld": ".bo",
     "currency": "Boliviano",
@@ -1582,7 +1582,7 @@
   {
     "country": "South Sudan",
     "demonym": "South Sudanese",
-    "id": "SS",
+    "tag": "SS",
     "iso2": "SS",
     "tld": ".ss",
     "currency": "South Sudanese Pound",
@@ -1602,7 +1602,7 @@
   {
     "country": "Tunisia",
     "demonym": "Tunisian",
-    "id": "TN",
+    "tag": "TN",
     "iso2": "TN",
     "tld": ".tn",
     "currency": "Tunisian Dinar",
@@ -1622,7 +1622,7 @@
   {
     "country": "Belgium",
     "demonym": "Belgian",
-    "id": "BE",
+    "tag": "BE",
     "iso2": "BE",
     "tld": ".be",
     "currency": "Euro",
@@ -1642,7 +1642,7 @@
   {
     "country": "Haiti",
     "demonym": "Haitian",
-    "id": "HT",
+    "tag": "HT",
     "iso2": "HT",
     "tld": ".ht",
     "currency": "Gourde",
@@ -1662,7 +1662,7 @@
   {
     "country": "Jordan",
     "demonym": "Jordanian",
-    "id": "JO",
+    "tag": "JO",
     "iso2": "JO",
     "tld": ".jo",
     "currency": "Jordanian Dinar",
@@ -1682,7 +1682,7 @@
   {
     "country": "Cuba",
     "demonym": "Cuban",
-    "id": "CU",
+    "tag": "CU",
     "iso2": "CU",
     "tld": ".cu",
     "currency": "Cuban Peso",
@@ -1702,7 +1702,7 @@
   {
     "country": "Dominican Republic",
     "demonym": "Dominican",
-    "id": "DO",
+    "tag": "DO",
     "iso2": "DO",
     "tld": ".do",
     "currency": "Dominican Peso",
@@ -1722,7 +1722,7 @@
   {
     "country": "Czech Republic",
     "demonym": "Czech",
-    "id": "CZ",
+    "tag": "CZ",
     "iso2": "CZ",
     "tld": ".cz",
     "currency": "Czech Koruna",
@@ -1742,7 +1742,7 @@
   {
     "country": "Sweden",
     "demonym": "Swedish",
-    "id": "SE",
+    "tag": "SE",
     "iso2": "SE",
     "tld": ".se",
     "currency": "Swedish Krona",
@@ -1762,7 +1762,7 @@
   {
     "country": "Greece",
     "demonym": "Greek",
-    "id": "GR",
+    "tag": "GR",
     "iso2": "GR",
     "tld": ".gr",
     "currency": "Euro",
@@ -1782,7 +1782,7 @@
   {
     "country": "Azerbaijan",
     "demonym": "Azerbaijani",
-    "id": "AZ",
+    "tag": "AZ",
     "iso2": "AZ",
     "tld": ".az",
     "currency": "Azerbaijani Manat",
@@ -1802,7 +1802,7 @@
   {
     "country": "Portugal",
     "demonym": "Portuguese",
-    "id": "PT",
+    "tag": "PT",
     "iso2": "PT",
     "tld": ".pt",
     "currency": "Euro",
@@ -1822,7 +1822,7 @@
   {
     "country": "United Arab Emirates",
     "demonym": "Emirati",
-    "id": "AE",
+    "tag": "AE",
     "iso2": "AE",
     "tld": ".ae",
     "currency": "United Arab Emirates Dirham",
@@ -1842,7 +1842,7 @@
   {
     "country": "Papua New Guinea",
     "demonym": "Papua New Guinean",
-    "id": "PG",
+    "tag": "PG",
     "iso2": "PG",
     "tld": ".pg",
     "currency": "Kina",
@@ -1862,7 +1862,7 @@
   {
     "country": "Hungary",
     "demonym": "Hungarian",
-    "id": "HU",
+    "tag": "HU",
     "iso2": "HU",
     "tld": ".hu",
     "currency": "Hungarian Forint",
@@ -1882,7 +1882,7 @@
   {
     "country": "Honduras",
     "demonym": "Catracho",
-    "id": "HN",
+    "tag": "HN",
     "iso2": "HN",
     "tld": ".hn",
     "currency": "Honduran Lempira",
@@ -1902,7 +1902,7 @@
   {
     "country": "Belarus",
     "demonym": "Belarusian",
-    "id": "BY",
+    "tag": "BY",
     "iso2": "BY",
     "tld": ".by",
     "currency": "Belarusian Ruble",
@@ -1922,7 +1922,7 @@
   {
     "country": "Tajikistan",
     "demonym": "Tajikistani",
-    "id": "TJ",
+    "tag": "TJ",
     "iso2": "TJ",
     "tld": ".tj",
     "currency": "Tajikistani Somoni",
@@ -1942,7 +1942,7 @@
   {
     "country": "Israel",
     "demonym": "Israeli",
-    "id": "IL",
+    "tag": "IL",
     "iso2": "IL",
     "tld": ".il",
     "currency": "New Shekel",
@@ -1962,7 +1962,7 @@
   {
     "country": "Austria",
     "demonym": "Austrian",
-    "id": "AT",
+    "tag": "AT",
     "iso2": "AT",
     "tld": ".at",
     "currency": "Euro",
@@ -1982,7 +1982,7 @@
   {
     "country": "Sierra Leone",
     "demonym": "Sierra Leonean",
-    "id": "SL",
+    "tag": "SL",
     "iso2": "SL",
     "tld": ".sl",
     "currency": "Leone",
@@ -2002,7 +2002,7 @@
   {
     "country": "Togo",
     "demonym": "Togolese",
-    "id": "TG",
+    "tag": "TG",
     "iso2": "TG",
     "tld": ".tg",
     "currency": "West African Cfa Franc",
@@ -2022,7 +2022,7 @@
   {
     "country": "Switzerland",
     "demonym": "Swiss",
-    "id": "CH",
+    "tag": "CH",
     "iso2": "CH",
     "tld": ".ch",
     "currency": "Swiss Franc",
@@ -2042,7 +2042,7 @@
   {
     "country": "Laos",
     "demonym": "Laotian",
-    "id": "LA",
+    "tag": "LA",
     "iso2": "LA",
     "tld": ".la",
     "currency": "Lao Kip",
@@ -2062,7 +2062,7 @@
   {
     "country": "Paraguay",
     "demonym": "Paraguayan",
-    "id": "PY",
+    "tag": "PY",
     "iso2": "PY",
     "tld": ".py",
     "currency": "Paraguayan Guaranã­",
@@ -2082,7 +2082,7 @@
   {
     "country": "Hong Kong",
     "demonym": "Hong Konger",
-    "id": "HK",
+    "tag": "HK",
     "iso2": "HK",
     "tld": ".hk",
     "currency": "Hong Kong Dollar",
@@ -2102,7 +2102,7 @@
   {
     "country": "Libya",
     "demonym": "Libyan",
-    "id": "LY",
+    "tag": "LY",
     "iso2": "LY",
     "tld": ".ly",
     "currency": "Libyan Dinar",
@@ -2122,7 +2122,7 @@
   {
     "country": "Bulgaria",
     "demonym": "Bulgarian",
-    "id": "BG",
+    "tag": "BG",
     "iso2": "BG",
     "tld": ".bg",
     "currency": "Bulgarian Lev",
@@ -2142,7 +2142,7 @@
   {
     "country": "Serbia",
     "demonym": "Serbian",
-    "id": "RS",
+    "tag": "RS",
     "iso2": "RS",
     "tld": ".rs",
     "currency": "Serbian Dinar",
@@ -2162,7 +2162,7 @@
   {
     "country": "El Salvador",
     "demonym": "Salvadoran",
-    "id": "SV",
+    "tag": "SV",
     "iso2": "SV",
     "tld": ".sv",
     "currency": "United States Dollar",
@@ -2182,7 +2182,7 @@
   {
     "country": "Nicaragua",
     "demonym": "Nicaraguan",
-    "id": "NI",
+    "tag": "NI",
     "iso2": "NI",
     "tld": ".ni",
     "currency": "Nicaraguan Cordoba",
@@ -2202,7 +2202,7 @@
   {
     "country": "Eritrea",
     "demonym": "Eritrean",
-    "id": "ER",
+    "tag": "ER",
     "iso2": "ER",
     "tld": ".er",
     "currency": "Nakfa",
@@ -2222,7 +2222,7 @@
   {
     "country": "Kyrgyzstan",
     "demonym": "Kyrgyzstani",
-    "id": "KG",
+    "tag": "KG",
     "iso2": "KG",
     "tld": ".kg",
     "currency": "Kyrgyz Som",
@@ -2242,7 +2242,7 @@
   {
     "country": "Singapore",
     "demonym": "Singaporean",
-    "id": "SG",
+    "tag": "SG",
     "iso2": "SG",
     "tld": ".sg",
     "currency": "Singapore Dollar",
@@ -2262,7 +2262,7 @@
   {
     "country": "Denmark",
     "demonym": "Danish",
-    "id": "DK",
+    "tag": "DK",
     "iso2": "DK",
     "tld": ".dk",
     "currency": "Danish Krone",
@@ -2282,7 +2282,7 @@
   {
     "country": "Turkmenistan",
     "demonym": "Turkmenistani",
-    "id": "TM",
+    "tag": "TM",
     "iso2": "TM",
     "tld": ".tm",
     "currency": "Turkmenistan New Manat",
@@ -2302,7 +2302,7 @@
   {
     "country": "Republic of the Congo",
     "demonym": "Congolese",
-    "id": "CG",
+    "tag": "CG",
     "iso2": "CG",
     "tld": ".cg",
     "currency": "Central African Cfa Franc",
@@ -2322,7 +2322,7 @@
   {
     "country": "Finland",
     "demonym": "Finnish",
-    "id": "FI",
+    "tag": "FI",
     "iso2": "FI",
     "tld": ".fi",
     "currency": "Euro",
@@ -2342,7 +2342,7 @@
   {
     "country": "Norway",
     "demonym": "Norwegian",
-    "id": "NO",
+    "tag": "NO",
     "iso2": "NO",
     "tld": ".no",
     "currency": "Norwegian Krone",
@@ -2362,7 +2362,7 @@
   {
     "country": "Central African Republic",
     "demonym": "Central African",
-    "id": "CF",
+    "tag": "CF",
     "iso2": "CF",
     "tld": ".cf",
     "currency": "Central African Cfa Franc",
@@ -2382,7 +2382,7 @@
   {
     "country": "Liberia",
     "demonym": "Liberian",
-    "id": "LR",
+    "tag": "LR",
     "iso2": "LR",
     "tld": ".lr",
     "currency": "Liberian Dollar",
@@ -2402,7 +2402,7 @@
   {
     "country": "Slovakia",
     "demonym": "Slovak",
-    "id": "SK",
+    "tag": "SK",
     "iso2": "SK",
     "tld": ".sk",
     "currency": "Euro",
@@ -2422,7 +2422,7 @@
   {
     "country": "Lebanon",
     "demonym": "Lebanese",
-    "id": "LB",
+    "tag": "LB",
     "iso2": "LB",
     "tld": ".lb",
     "currency": "Lebanese Pound",
@@ -2442,7 +2442,7 @@
   {
     "country": "Ireland",
     "demonym": "Irish",
-    "id": "IE",
+    "tag": "IE",
     "iso2": "IE",
     "tld": ".ie",
     "currency": "Euro",
@@ -2462,7 +2462,7 @@
   {
     "country": "Costa Rica",
     "demonym": "Costa Rican",
-    "id": "CR",
+    "tag": "CR",
     "iso2": "CR",
     "tld": ".cr",
     "currency": "Costa Rican Colon",
@@ -2482,7 +2482,7 @@
   {
     "country": "New Zealand",
     "demonym": "New Zealander",
-    "id": "NZ",
+    "tag": "NZ",
     "iso2": "NZ",
     "tld": ".nz",
     "currency": "New Zealand Dollar",
@@ -2502,7 +2502,7 @@
   {
     "country": "Georgia",
     "demonym": "Georgian",
-    "id": "GE",
+    "tag": "GE",
     "iso2": "GE",
     "tld": ".ge",
     "currency": "Georgian Lari",
@@ -2522,7 +2522,7 @@
   {
     "country": "Panama",
     "demonym": "Panamanian",
-    "id": "PA",
+    "tag": "PA",
     "iso2": "PA",
     "tld": ".pa",
     "currency": "United States Dollar",
@@ -2542,7 +2542,7 @@
   {
     "country": "Mauritania",
     "demonym": "Mauritanian",
-    "id": "MR",
+    "tag": "MR",
     "iso2": "MR",
     "tld": ".mr",
     "currency": "Mauritanian Ouguiya",
@@ -2562,7 +2562,7 @@
   {
     "country": "Croatia",
     "demonym": "Croatian",
-    "id": "HR",
+    "tag": "HR",
     "iso2": "HR",
     "tld": ".hr",
     "currency": "Euro",
@@ -2582,7 +2582,7 @@
   {
     "country": "Oman",
     "demonym": "Omani",
-    "id": "OM",
+    "tag": "OM",
     "iso2": "OM",
     "tld": ".om",
     "currency": "Omani Rial",
@@ -2602,7 +2602,7 @@
   {
     "country": "Bosnia and Herzegovina",
     "demonym": "Herzegovinian",
-    "id": "BA",
+    "tag": "BA",
     "iso2": "BA",
     "tld": ".ba",
     "currency": "Convertible Mark",
@@ -2622,7 +2622,7 @@
   {
     "country": "Uruguay",
     "demonym": "Uruguayan",
-    "id": "UY",
+    "tag": "UY",
     "iso2": "UY",
     "tld": ".uy",
     "currency": "Uruguayan Peso",
@@ -2642,7 +2642,7 @@
   {
     "country": "Mongolia",
     "demonym": "Mongolian",
-    "id": "MN",
+    "tag": "MN",
     "iso2": "MN",
     "tld": ".mn",
     "currency": "Tugrik",
@@ -2662,7 +2662,7 @@
   {
     "country": "Moldova",
     "demonym": "Moldavian",
-    "id": "MD",
+    "tag": "MD",
     "iso2": "MD",
     "tld": ".md",
     "currency": "Moldovan Leu",
@@ -2682,7 +2682,7 @@
   {
     "country": "Kuwait",
     "demonym": "Kuwaiti",
-    "id": "KW",
+    "tag": "KW",
     "iso2": "KW",
     "tld": ".kw",
     "currency": "Kuwaiti Dinar",
@@ -2702,7 +2702,7 @@
   {
     "country": "Albania",
     "demonym": "Albanian",
-    "id": "AL",
+    "tag": "AL",
     "iso2": "AL",
     "tld": ".al",
     "currency": "Albanian Lek",
@@ -2722,7 +2722,7 @@
   {
     "country": "Puerto Rico",
     "demonym": "Puerto Rican",
-    "id": "PR",
+    "tag": "PR",
     "iso2": "PR",
     "tld": ".pr",
     "currency": "United States Dollar",
@@ -2742,7 +2742,7 @@
   {
     "country": "Armenia",
     "demonym": "Armenian",
-    "id": "AM",
+    "tag": "AM",
     "iso2": "AM",
     "tld": ".am",
     "currency": "Armenian Dram",
@@ -2762,7 +2762,7 @@
   {
     "country": "West Bank",
     "demonym": "West Banker",
-    "id": "XW",
+    "tag": "XW",
     "iso2": "PS",
     "tld": "",
     "currency": "",
@@ -2782,7 +2782,7 @@
   {
     "country": "Jamaica",
     "demonym": "Jamaican",
-    "id": "JM",
+    "tag": "JM",
     "iso2": "JM",
     "tld": ".jm",
     "currency": "Jamaican Dollar",
@@ -2802,7 +2802,7 @@
   {
     "country": "Namibia",
     "demonym": "Namibian",
-    "id": "NA",
+    "tag": "NA",
     "iso2": "NA",
     "tld": ".na",
     "currency": "Namibian Dollar ",
@@ -2822,7 +2822,7 @@
   {
     "country": "Lithuania",
     "demonym": "Lithuanian",
-    "id": "LT",
+    "tag": "LT",
     "iso2": "LT",
     "tld": ".lt",
     "currency": "Euro",
@@ -2842,7 +2842,7 @@
   {
     "country": "Qatar",
     "demonym": "Qatari",
-    "id": "QA",
+    "tag": "QA",
     "iso2": "QA",
     "tld": ".qa",
     "currency": "Qatari Riyal",
@@ -2862,7 +2862,7 @@
   {
     "country": "The Gambia",
     "demonym": "Gambian",
-    "id": "GM",
+    "tag": "GM",
     "iso2": "GM",
     "tld": ".gm",
     "currency": "Dalasi",
@@ -2882,7 +2882,7 @@
   {
     "country": "Botswana",
     "demonym": "Botswanan",
-    "id": "BW",
+    "tag": "BW",
     "iso2": "BW",
     "tld": ".bw",
     "currency": "Botswana Pula",
@@ -2902,7 +2902,7 @@
   {
     "country": "Gabon",
     "demonym": "Gabonese",
-    "id": "GA",
+    "tag": "GA",
     "iso2": "GA",
     "tld": ".ga",
     "currency": "Central African Cfa Franc",
@@ -2922,7 +2922,7 @@
   {
     "country": "Lesotho",
     "demonym": "Basotho",
-    "id": "LS",
+    "tag": "LS",
     "iso2": "LS",
     "tld": ".ls",
     "currency": "Rand",
@@ -2942,7 +2942,7 @@
   {
     "country": "North Macedonia",
     "demonym": "Macedonian",
-    "id": "MK",
+    "tag": "MK",
     "iso2": "MK",
     "tld": ".mk",
     "currency": "North Macedonian Denar",
@@ -2962,7 +2962,7 @@
   {
     "country": "Slovenia",
     "demonym": "Slovenian",
-    "id": "SI",
+    "tag": "SI",
     "iso2": "SI",
     "tld": ".si",
     "currency": "Euro",
@@ -2982,7 +2982,7 @@
   {
     "country": "Guinea-Bissau",
     "demonym": "Guinea-Bissauan",
-    "id": "GW",
+    "tag": "GW",
     "iso2": "GW",
     "tld": ".gw",
     "currency": "West African Cfa Franc",
@@ -3002,7 +3002,7 @@
   {
     "country": "Kosovo",
     "demonym": "Kosovan",
-    "id": "XK",
+    "tag": "XK",
     "iso2": "XK",
     "tld": "",
     "currency": "Euro",
@@ -3022,7 +3022,7 @@
   {
     "country": "Latvia",
     "demonym": "Latvian",
-    "id": "LV",
+    "tag": "LV",
     "iso2": "LV",
     "tld": ".lv",
     "currency": "Euro",
@@ -3042,7 +3042,7 @@
   {
     "country": "Equatorial Guinea",
     "demonym": "Equatorial Guinean",
-    "id": "GQ",
+    "tag": "GQ",
     "iso2": "GQ",
     "tld": ".gq",
     "currency": "Central African Cfa Franc",
@@ -3062,7 +3062,7 @@
   {
     "country": "Bahrain",
     "demonym": "Bahraini",
-    "id": "BH",
+    "tag": "BH",
     "iso2": "BH",
     "tld": ".bh",
     "currency": "Bahraini Dinar",
@@ -3082,7 +3082,7 @@
   {
     "country": "Timor-Leste",
     "demonym": "East Timorese",
-    "id": "TL",
+    "tag": "TL",
     "iso2": "TL",
     "tld": ".tl",
     "currency": "United States Dollar",
@@ -3102,7 +3102,7 @@
   {
     "country": "Trinidad and Tobago",
     "demonym": "Trinidadian",
-    "id": "TT",
+    "tag": "TT",
     "iso2": "TT",
     "tld": ".tt",
     "currency": "Trinidad And Tobago Dollar",
@@ -3122,7 +3122,7 @@
   {
     "country": "Mauritius",
     "demonym": "Mauritian",
-    "id": "MU",
+    "tag": "MU",
     "iso2": "MU",
     "tld": ".mu",
     "currency": "Mauritian Rupee",
@@ -3142,7 +3142,7 @@
   {
     "country": "Cyprus",
     "demonym": "Cypriot",
-    "id": "CY",
+    "tag": "CY",
     "iso2": "CY",
     "tld": ".cy",
     "currency": "Euro",
@@ -3162,7 +3162,7 @@
   {
     "country": "Estonia",
     "demonym": "Estonian",
-    "id": "EE",
+    "tag": "EE",
     "iso2": "EE",
     "tld": ".ee",
     "currency": "Euro",
@@ -3182,7 +3182,7 @@
   {
     "country": "Eswatini",
     "demonym": "liSwati",
-    "id": "SZ",
+    "tag": "SZ",
     "iso2": "SZ",
     "tld": ".sz",
     "currency": "Lilangeni",
@@ -3202,7 +3202,7 @@
   {
     "country": "Djibouti",
     "demonym": "Djiboutian",
-    "id": "DJ",
+    "tag": "DJ",
     "iso2": "DJ",
     "tld": ".dj",
     "currency": "Djiboutian Franc",
@@ -3222,7 +3222,7 @@
   {
     "country": "Fiji",
     "demonym": "Fijian",
-    "id": "FJ",
+    "tag": "FJ",
     "iso2": "FJ",
     "tld": ".fj",
     "currency": "Fijian Dollar",
@@ -3242,7 +3242,7 @@
   {
     "country": "Comoros",
     "demonym": "Comorian",
-    "id": "KM",
+    "tag": "KM",
     "iso2": "KM",
     "tld": ".km",
     "currency": "Comorian Franc",
@@ -3262,7 +3262,7 @@
   {
     "country": "Bhutan",
     "demonym": "Bhutanese",
-    "id": "BT",
+    "tag": "BT",
     "iso2": "BT",
     "tld": ".bt",
     "currency": "Ngultrum",
@@ -3282,7 +3282,7 @@
   {
     "country": "Guyana",
     "demonym": "Guyanese",
-    "id": "GY",
+    "tag": "GY",
     "iso2": "GY",
     "tld": ".gy",
     "currency": "Guyanese Dollar",
@@ -3302,7 +3302,7 @@
   {
     "country": "Solomon Islands",
     "demonym": "Solomon Islander",
-    "id": "SB",
+    "tag": "SB",
     "iso2": "SB",
     "tld": ".sb",
     "currency": "Solomon Islands Dollar",
@@ -3322,7 +3322,7 @@
   {
     "country": "Luxembourg",
     "demonym": "Luxembourgian",
-    "id": "LU",
+    "tag": "LU",
     "iso2": "LU",
     "tld": ".lu",
     "currency": "Euro",
@@ -3342,7 +3342,7 @@
   {
     "country": "Macau",
     "demonym": "Macanese",
-    "id": "MO",
+    "tag": "MO",
     "iso2": "MO",
     "tld": ".mo",
     "currency": "Hong Kong Dollar",
@@ -3362,7 +3362,7 @@
   {
     "country": "Suriname",
     "demonym": "Surinamese",
-    "id": "SR",
+    "tag": "SR",
     "iso2": "SR",
     "tld": ".sr",
     "currency": "Surinamese Dollar",
@@ -3382,7 +3382,7 @@
   {
     "country": "Cape Verde",
     "demonym": "Cabo Verdean",
-    "id": "CV",
+    "tag": "CV",
     "iso2": "CV",
     "tld": ".cv",
     "currency": "Cape Verdean Escudo",
@@ -3402,7 +3402,7 @@
   {
     "country": "Montenegro",
     "demonym": "Montenegrin",
-    "id": "ME",
+    "tag": "ME",
     "iso2": "ME",
     "tld": ".me",
     "currency": "Euro",
@@ -3422,7 +3422,7 @@
   {
     "country": "Western Sahara",
     "demonym": "Sahrawi",
-    "id": "EH",
+    "tag": "EH",
     "iso2": "EH",
     "tld": ".eh",
     "currency": "Moroccan Dirham",
@@ -3442,7 +3442,7 @@
   {
     "country": "Maldives",
     "demonym": "Maldivian",
-    "id": "MV",
+    "tag": "MV",
     "iso2": "MV",
     "tld": ".mv",
     "currency": "Maldivian Rufiyaa",
@@ -3462,7 +3462,7 @@
   {
     "country": "Brunei",
     "demonym": "Brunei",
-    "id": "BN",
+    "tag": "BN",
     "iso2": "BN",
     "tld": ".bn",
     "currency": "Brunei Dollar",
@@ -3482,7 +3482,7 @@
   {
     "country": "Malta",
     "demonym": "Maltese",
-    "id": "MT",
+    "tag": "MT",
     "iso2": "MT",
     "tld": ".mt",
     "currency": "Euro",
@@ -3502,7 +3502,7 @@
   {
     "country": "Belize",
     "demonym": "Belizean",
-    "id": "BZ",
+    "tag": "BZ",
     "iso2": "BZ",
     "tld": ".bz",
     "currency": "Belize Dollar",
@@ -3522,7 +3522,7 @@
   {
     "country": "Guadeloupe",
     "demonym": "Guadeloupean",
-    "id": "GP",
+    "tag": "GP",
     "iso2": "GP",
     "tld": ".gp",
     "currency": "Euro",
@@ -3542,7 +3542,7 @@
   {
     "country": "Iceland",
     "demonym": "Icelander",
-    "id": "IS",
+    "tag": "IS",
     "iso2": "IS",
     "tld": ".is",
     "currency": "Icelandic Krona",
@@ -3562,7 +3562,7 @@
   {
     "country": "The Bahamas",
     "demonym": "Bahamian",
-    "id": "BS",
+    "tag": "BS",
     "iso2": "BS",
     "tld": ".bs",
     "currency": "Bahamian Dollar",
@@ -3582,7 +3582,7 @@
   {
     "country": "Vanuatu",
     "demonym": "Ni-Vanuatu",
-    "id": "VU",
+    "tag": "VU",
     "iso2": "VU",
     "tld": ".vu",
     "currency": "Vanuatu Vatus",
@@ -3602,7 +3602,7 @@
   {
     "country": "Barbados",
     "demonym": "Barbadian",
-    "id": "BB",
+    "tag": "BB",
     "iso2": "BB",
     "tld": ".bb",
     "currency": "Barbadian Dollar",
@@ -3622,7 +3622,7 @@
   {
     "country": "French Polynesia",
     "demonym": "French Polynesian",
-    "id": "PF",
+    "tag": "PF",
     "iso2": "PF",
     "tld": ".pf",
     "currency": "Cfp Franc",
@@ -3642,7 +3642,7 @@
   {
     "country": "New Caledonia",
     "demonym": "New Caledonian",
-    "id": "NC",
+    "tag": "NC",
     "iso2": "NC",
     "tld": ".nc",
     "currency": "Cfp Franc",
@@ -3662,7 +3662,7 @@
   {
     "country": "São Tomé and Príncipe",
     "demonym": "Sao Tomean",
-    "id": "ST",
+    "tag": "ST",
     "iso2": "ST",
     "tld": ".st",
     "currency": "Sã£O Tomã© And Prã­Ncipe Dobra",
@@ -3682,7 +3682,7 @@
   {
     "country": "Samoa",
     "demonym": "Samoan",
-    "id": "WS",
+    "tag": "WS",
     "iso2": "WS",
     "tld": ".ws",
     "currency": "Samoan Tala",
@@ -3702,7 +3702,7 @@
   {
     "country": "Guam",
     "demonym": "Guamanian",
-    "id": "GU",
+    "tag": "GU",
     "iso2": "GU",
     "tld": ".gu",
     "currency": "United States Dollar",
@@ -3722,7 +3722,7 @@
   {
     "country": "Saint Lucia",
     "demonym": "Saint Lucian",
-    "id": "LC",
+    "tag": "LC",
     "iso2": "LC",
     "tld": ".lc",
     "currency": "Eastern Caribbean Dollar",
@@ -3742,7 +3742,7 @@
   {
     "country": "Curaçao",
     "demonym": "Curaçaoan",
-    "id": "CW",
+    "tag": "CW",
     "iso2": "CW",
     "tld": ".cw",
     "currency": "Netherlands Antillean Guilder",
@@ -3762,7 +3762,7 @@
   {
     "country": "Aruba",
     "demonym": "Aruban",
-    "id": "AW",
+    "tag": "AW",
     "iso2": "AW",
     "tld": ".aw",
     "currency": "Aruban Florin",
@@ -3782,7 +3782,7 @@
   {
     "country": "Kiribati",
     "demonym": "I-Kiribati",
-    "id": "KI",
+    "tag": "KI",
     "iso2": "KI",
     "tld": ".ki",
     "currency": "Australian Dollar",
@@ -3802,7 +3802,7 @@
   {
     "country": "Grenada",
     "demonym": "Grenadian",
-    "id": "GD",
+    "tag": "GD",
     "iso2": "GD",
     "tld": ".gd",
     "currency": "Eastern Caribbean Dollar",
@@ -3822,7 +3822,7 @@
   {
     "country": "Tonga",
     "demonym": "Tongan",
-    "id": "TO",
+    "tag": "TO",
     "iso2": "TO",
     "tld": ".to",
     "currency": "Tongan Paʻanga",
@@ -3842,7 +3842,7 @@
   {
     "country": "United States Virgin Islands",
     "demonym": "Virgin Islander",
-    "id": "VI",
+    "tag": "VI",
     "iso2": "VI",
     "tld": ".vi",
     "currency": "United States Dollar",
@@ -3862,7 +3862,7 @@
   {
     "country": "Jersey",
     "demonym": "Jersey People",
-    "id": "JE",
+    "tag": "JE",
     "iso2": "JE",
     "tld": ".je",
     "currency": "Pound Sterling",
@@ -3882,7 +3882,7 @@
   {
     "country": "Antigua and Barbuda",
     "demonym": "Antigua and Barbuda",
-    "id": "AG",
+    "tag": "AG",
     "iso2": "AG",
     "tld": ".ag",
     "currency": "Eastern Caribbean Dollar",
@@ -3902,7 +3902,7 @@
   {
     "country": "Saint Vincent and the Grenadines",
     "demonym": "Saint Vincentian",
-    "id": "VC",
+    "tag": "VC",
     "iso2": "VC",
     "tld": ".vc",
     "currency": "Eastern Caribbean Dollar",
@@ -3922,7 +3922,7 @@
   {
     "country": "Federated States of Micronesia",
     "demonym": "Micronesian",
-    "id": "FM",
+    "tag": "FM",
     "iso2": "FM",
     "tld": ".fm",
     "currency": "United States Dollar",
@@ -3942,7 +3942,7 @@
   {
     "country": "Seychelles",
     "demonym": "Seychelloise",
-    "id": "SC",
+    "tag": "SC",
     "iso2": "SC",
     "tld": ".sc",
     "currency": "Seychellois Rupee",
@@ -3962,7 +3962,7 @@
   {
     "country": "Isle of Man",
     "demonym": "Manx",
-    "id": "IM",
+    "tag": "IM",
     "iso2": "IM",
     "tld": ".im",
     "currency": "Manx Pound",
@@ -3982,7 +3982,7 @@
   {
     "country": "Andorra",
     "demonym": "Andorran",
-    "id": "AD",
+    "tag": "AD",
     "iso2": "AD",
     "tld": ".ad",
     "currency": "Euro",
@@ -4002,7 +4002,7 @@
   {
     "country": "Marshall Islands",
     "demonym": "Marshallese",
-    "id": "MH",
+    "tag": "MH",
     "iso2": "MH",
     "tld": ".mh",
     "currency": "United States Dollar",
@@ -4022,7 +4022,7 @@
   {
     "country": "Dominica",
     "demonym": "Dominican",
-    "id": "DM",
+    "tag": "DM",
     "iso2": "DM",
     "tld": ".dm",
     "currency": "Eastern Caribbean Dollar",
@@ -4042,7 +4042,7 @@
   {
     "country": "Bermuda",
     "demonym": "Bermudian",
-    "id": "BM",
+    "tag": "BM",
     "iso2": "BM",
     "tld": ".bm",
     "currency": "Bermudian Dollar",
@@ -4062,7 +4062,7 @@
   {
     "country": "Guernsey",
     "demonym": "Guernsey",
-    "id": "GG",
+    "tag": "GG",
     "iso2": "GG",
     "tld": ".gg",
     "currency": "Pound Sterling",
@@ -4082,7 +4082,7 @@
   {
     "country": "Cayman Islands",
     "demonym": "Caymanian",
-    "id": "KY",
+    "tag": "KY",
     "iso2": "KY",
     "tld": ".ky",
     "currency": "Cayman Islands Dollar",
@@ -4102,7 +4102,7 @@
   {
     "country": "Turks and Caicos Islands",
     "demonym": "Turks and Caicos Islander",
-    "id": "TC",
+    "tag": "TC",
     "iso2": "TC",
     "tld": ".tc",
     "currency": "United States Dollar",
@@ -4122,7 +4122,7 @@
   {
     "country": "Greenland",
     "demonym": "Greenlandic",
-    "id": "GL",
+    "tag": "GL",
     "iso2": "GL",
     "tld": ".gl",
     "currency": "Danish Krone",
@@ -4142,7 +4142,7 @@
   {
     "country": "Saint Kitts and Nevis",
     "demonym": "Kittitian",
-    "id": "KN",
+    "tag": "KN",
     "iso2": "KN",
     "tld": ".kn",
     "currency": "Eastern Caribbean Dollar",
@@ -4162,7 +4162,7 @@
   {
     "country": "Faroe Islands",
     "demonym": "Faroe Islander",
-    "id": "FO",
+    "tag": "FO",
     "iso2": "FO",
     "tld": ".fo",
     "currency": "Faroese Krona",
@@ -4182,7 +4182,7 @@
   {
     "country": "Northern Mariana Islands",
     "demonym": "Northern Mariana Islander",
-    "id": "MP",
+    "tag": "MP",
     "iso2": "MP",
     "tld": ".mp",
     "currency": "United States Dollar",
@@ -4202,7 +4202,7 @@
   {
     "country": "Sint Maarten",
     "demonym": "St. Maartener",
-    "id": "SX",
+    "tag": "SX",
     "iso2": "SX",
     "tld": ".sx",
     "currency": "Netherlands Antillean Guilder",
@@ -4222,7 +4222,7 @@
   {
     "country": "American Samoa",
     "demonym": "American Samoan",
-    "id": "AS",
+    "tag": "AS",
     "iso2": "AS",
     "tld": ".as",
     "currency": "United States Dollar",
@@ -4242,7 +4242,7 @@
   {
     "country": "Liechtenstein",
     "demonym": "Liechtensteiner",
-    "id": "LI",
+    "tag": "LI",
     "iso2": "LI",
     "tld": ".li",
     "currency": "Swiss Franc",
@@ -4262,7 +4262,7 @@
   {
     "country": "British Virgin Islands",
     "demonym": "British Virgin Islander",
-    "id": "VG",
+    "tag": "VG",
     "iso2": "VG",
     "tld": ".vg",
     "currency": "United States Dollar",
@@ -4282,7 +4282,7 @@
   {
     "country": "San Marino",
     "demonym": "Sammarinese",
-    "id": "SM",
+    "tag": "SM",
     "iso2": "SM",
     "tld": ".sm",
     "currency": "Euro",
@@ -4302,7 +4302,7 @@
   {
     "country": "Saint-Martin",
     "demonym": "Saint-Martinoi",
-    "id": "MF",
+    "tag": "MF",
     "iso2": "MF",
     "tld": ".mf",
     "currency": "Euro",
@@ -4322,7 +4322,7 @@
   {
     "country": "Monaco",
     "demonym": "Monegasque",
-    "id": "MC",
+    "tag": "MC",
     "iso2": "MC",
     "tld": ".mc",
     "currency": "Euro",
@@ -4342,7 +4342,7 @@
   {
     "country": "Caribbean Netherlands",
     "demonym": "Dutch Caribbean",
-    "id": "BQ",
+    "tag": "BQ",
     "iso2": "BQ",
     "tld": ".bq",
     "currency": "United States Dollar",
@@ -4362,7 +4362,7 @@
   {
     "country": "Gibraltar",
     "demonym": "Gibraltarian",
-    "id": "GI",
+    "tag": "GI",
     "iso2": "GI",
     "tld": ".gi",
     "currency": "Gibraltar Pound",
@@ -4382,7 +4382,7 @@
   {
     "country": "Palau",
     "demonym": "Palauan",
-    "id": "PW",
+    "tag": "PW",
     "iso2": "PW",
     "tld": ".pw",
     "currency": "United States Dollar",
@@ -4402,7 +4402,7 @@
   {
     "country": "Anguilla",
     "demonym": "Anguillan",
-    "id": "AI",
+    "tag": "AI",
     "iso2": "AI",
     "tld": ".ai",
     "currency": "Eastern Caribbean Dollar",
@@ -4422,7 +4422,7 @@
   {
     "country": "Wallis and Futuna",
     "demonym": "Wallisian",
-    "id": "WF",
+    "tag": "WF",
     "iso2": "WF",
     "tld": ".wf",
     "currency": "Cfp Franc",
@@ -4442,7 +4442,7 @@
   {
     "country": "Tuvalu",
     "demonym": "Tuvaluan",
-    "id": "TV",
+    "tag": "TV",
     "iso2": "TV",
     "tld": ".tv",
     "currency": "Tuvaluan Dollar",
@@ -4462,7 +4462,7 @@
   {
     "country": "Nauru",
     "demonym": "Nauruan",
-    "id": "NR",
+    "tag": "NR",
     "iso2": "NR",
     "tld": ".nr",
     "currency": "Australian Dollar",
@@ -4482,7 +4482,7 @@
   {
     "country": "Cook Islands",
     "demonym": "Cook Islander",
-    "id": "CK",
+    "tag": "CK",
     "iso2": "CK",
     "tld": ".ck",
     "currency": "Cook Islands Dollar",
@@ -4502,7 +4502,7 @@
   {
     "country": "Saint Helena, Ascension and Tristan da Cunha",
     "demonym": "Ascension Islander",
-    "id": "SH",
+    "tag": "SH",
     "iso2": "SH",
     "tld": "",
     "currency": "Pound Sterling",
@@ -4522,7 +4522,7 @@
   {
     "country": "Saint Barthélemy",
     "demonym": "Saint-Barth",
-    "id": "BL",
+    "tag": "BL",
     "iso2": "BL",
     "tld": ".bl",
     "currency": "Euro",
@@ -4542,7 +4542,7 @@
   {
     "country": "Montserrat",
     "demonym": "Montserratian",
-    "id": "MS",
+    "tag": "MS",
     "iso2": "MS",
     "tld": ".ms",
     "currency": "Eastern Caribbean Dollar",
@@ -4562,7 +4562,7 @@
   {
     "country": "Saint Pierre and Miquelon",
     "demonym": "Saint-Pierrai",
-    "id": "PM",
+    "tag": "PM",
     "iso2": "PM",
     "tld": ".fr",
     "currency": "Euro",
@@ -4582,7 +4582,7 @@
   {
     "country": "Falkland Islands",
     "demonym": "Falkland Islander",
-    "id": "FK",
+    "tag": "FK",
     "iso2": "FK",
     "tld": ".fk",
     "currency": "Falkland Islands Pound",
@@ -4602,7 +4602,7 @@
   {
     "country": "Svalbard and Jan Mayen",
     "demonym": "Svalbardian",
-    "id": "SJ",
+    "tag": "SJ",
     "iso2": "SJ",
     "tld": ".sj",
     "currency": "Norwegian Krone",
@@ -4622,7 +4622,7 @@
   {
     "country": "Christmas Island",
     "demonym": "Christmas Islander",
-    "id": "CX",
+    "tag": "CX",
     "iso2": "CX",
     "tld": ".cx",
     "currency": "Australian Dollar",
@@ -4642,7 +4642,7 @@
   {
     "country": "Niue",
     "demonym": "Niuean",
-    "id": "NU",
+    "tag": "NU",
     "iso2": "NU",
     "tld": ".nu",
     "currency": "New Zealand Dollar",
@@ -4662,7 +4662,7 @@
   {
     "country": "Norfolk Island",
     "demonym": "Norfolk Islander",
-    "id": "NF",
+    "tag": "NF",
     "iso2": "NF",
     "tld": ".nf",
     "currency": "Australian Dollar",
@@ -4682,7 +4682,7 @@
   {
     "country": "Tokelau",
     "demonym": "Tokelauan",
-    "id": "TK",
+    "tag": "TK",
     "iso2": "TK",
     "tld": ".tk",
     "currency": "New Zealand Dollar",
@@ -4702,7 +4702,7 @@
   {
     "country": "Vatican City",
     "demonym": "Vatican",
-    "id": "VA",
+    "tag": "VA",
     "iso2": "VA",
     "tld": ".va",
     "currency": "Euro",
@@ -4722,7 +4722,7 @@
   {
     "country": "Cocos (Keeling) Islands",
     "demonym": "Cocos Islander",
-    "id": "CC",
+    "tag": "CC",
     "iso2": "CC",
     "tld": ".cc",
     "currency": "Australian Dollar",
@@ -4742,7 +4742,7 @@
   {
     "country": "United States Minor Outlying Islands",
     "demonym": "",
-    "id": "UM",
+    "tag": "UM",
     "iso2": "UM",
     "tld": ".um",
     "currency": "United States Dollar",
@@ -4762,7 +4762,7 @@
   {
     "country": "Pitcairn Islands",
     "demonym": "Pitcairn Islander",
-    "id": "PN",
+    "tag": "PN",
     "iso2": "PN",
     "tld": ".pn",
     "currency": "New Zealand Dollar",
@@ -4782,7 +4782,7 @@
   {
     "country": "Akrotiri",
     "demonym": "",
-    "id": "QZ",
+    "tag": "QZ",
     "iso2": "",
     "tld": "",
     "currency": "",
@@ -4802,7 +4802,7 @@
   {
     "country": "British Indian Ocean Territory",
     "demonym": "",
-    "id": "IO",
+    "tag": "IO",
     "iso2": "IO",
     "tld": ".io",
     "currency": "United States Dollar",
@@ -4822,7 +4822,7 @@
   {
     "country": "Dhekelia",
     "demonym": "",
-    "id": "XD",
+    "tag": "XD",
     "iso2": "",
     "tld": "",
     "currency": "",
@@ -4842,7 +4842,7 @@
   {
     "country": "French Guiana",
     "demonym": "French Guianese",
-    "id": "GF",
+    "tag": "GF",
     "iso2": "GF",
     "tld": ".gf",
     "currency": "Euro",
@@ -4862,7 +4862,7 @@
   {
     "country": "French Southern and Antarctic Lands",
     "demonym": "",
-    "id": "TF",
+    "tag": "TF",
     "iso2": "TF",
     "tld": ".tf",
     "currency": "Euro",
@@ -4882,7 +4882,7 @@
   {
     "country": "Gaza Strip",
     "demonym": "Gazan",
-    "id": "XG",
+    "tag": "XG",
     "iso2": "PS",
     "tld": "",
     "currency": "",
@@ -4902,7 +4902,7 @@
   {
     "country": "Martinique",
     "demonym": "Martiniquai",
-    "id": "MQ",
+    "tag": "MQ",
     "iso2": "MQ",
     "tld": ".mq",
     "currency": "Euro",
@@ -4922,7 +4922,7 @@
   {
     "country": "Mayotte",
     "demonym": "Mahoran ",
-    "id": "YT",
+    "tag": "YT",
     "iso2": "YT",
     "tld": ".yt",
     "currency": "Euro",
@@ -4942,7 +4942,7 @@
   {
     "country": "Paracel Islands",
     "demonym": "",
-    "id": "XP",
+    "tag": "XP",
     "iso2": "",
     "tld": "",
     "currency": "",
@@ -4962,7 +4962,7 @@
   {
     "country": "Réunion",
     "demonym": "Reunion",
-    "id": "RE",
+    "tag": "RE",
     "iso2": "RE",
     "tld": ".re",
     "currency": "Euro",
@@ -4982,7 +4982,7 @@
   {
     "country": "South Georgia and the South Sandwich Islands",
     "demonym": "South Sandwich Islander",
-    "id": "GS",
+    "tag": "GS",
     "iso2": "GS",
     "tld": ".gs",
     "currency": "Pound Sterling",
@@ -5002,7 +5002,7 @@
   {
     "country": "Heard Island and McDonald Islands",
     "demonym": "",
-    "id": "HM",
+    "tag": "HM",
     "iso2": "HM",
     "tld": ".hm",
     "currency": "",
@@ -5022,7 +5022,7 @@
   {
     "country": "Bouvet Island",
     "demonym": "",
-    "id": "BV",
+    "tag": "BV",
     "iso2": "BV",
     "tld": ".bv",
     "currency": "",
@@ -5042,7 +5042,7 @@
   {
     "country": "Antarctica",
     "demonym": "",
-    "id": "AQ",
+    "tag": "AQ",
     "iso2": "AQ",
     "tld": ".aq",
     "currency": "",

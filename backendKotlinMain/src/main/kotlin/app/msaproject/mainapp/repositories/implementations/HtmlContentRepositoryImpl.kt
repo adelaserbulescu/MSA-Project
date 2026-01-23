@@ -1,20 +1,31 @@
 package app.msaproject.mainapp.repositories.implementations
 
+import app.msaproject.mainapp.configs.PaginationConfig
 import app.msaproject.mainapp.dtos.htmlcontent.HtmlContentFullDTO
 import app.msaproject.mainapp.dtos.pagination.PaginatedResponseDTO
+import app.msaproject.mainapp.dtos_formatters.toHtmlContentFullDTO
+import app.msaproject.mainapp.entities.HtmlContentEntity
+import app.msaproject.mainapp.entities.HtmlContentType
 import app.msaproject.mainapp.repositories.interfaces.HtmlContentRepository
-import app.msaproject.mainapp.dtos_mocks.htmlcontent.MockedHtmlContentData
 import app.msaproject.mainapp.utils.PaginationUtils
-import app.msaproject.mainapp.configs.PaginationConfig
+import org.jetbrains.exposed.sql.*
+import org.jetbrains.exposed.sql.transactions.transaction
+import java.time.LocalDate
 
 class HtmlContentRepositoryImpl : HtmlContentRepository {
 
-    private val list = MockedHtmlContentData.htmlContents
-
-    override suspend fun getAll(): List<HtmlContentFullDTO> = list
+    override suspend fun getAll(): List<HtmlContentFullDTO> =
+        transaction {
+            HtmlContentEntity.selectAll().map { it.toHtmlContentFullDTO() }
+        }
 
     override suspend fun getById(id: Int): HtmlContentFullDTO? =
-        list.find { it.htmlContentID == id }
+        transaction {
+            HtmlContentEntity
+                .select { HtmlContentEntity.htmlContentID eq id }
+                .map { it.toHtmlContentFullDTO() }
+                .singleOrNull()
+        }
 
     override suspend fun getFiltered(
         countryID: Int?,
@@ -30,46 +41,58 @@ class HtmlContentRepositoryImpl : HtmlContentRepository {
         order: String?
     ): PaginatedResponseDTO<HtmlContentFullDTO> {
 
-        var result = list.filter { c ->
-            (countryID == null || c.countryID == countryID) &&
-                    (contentType == null || c.contentType?.name.equals(contentType, ignoreCase = true)) &&
-                    (version == null || c.version == version) &&
-                    (pageIndex == null || c.pageIndex == pageIndex) &&
-                    (pageSource == null || c.pageSource.equals(pageSource, ignoreCase = true)) &&
-                    (after == null || c.dateAdded >= after) &&
-                    (before == null || c.dateAdded <= before)
-        }
+        return transaction {
 
-        // Special mode: keep only latest version per (countryID + pageSource + pageIndex + contentType)
-        if (latestOnly) {
-            result = result
-                .groupBy { g ->
-                    listOf(
-                        g.countryID,
-                        g.pageSource,
-                        g.pageIndex,
-                        g.contentType
-                    )
-                }
-                .map { (_, entries) -> entries.maxBy { it.version ?: 0 } }
-                .sortedBy { it.htmlContentID }
-        }
+            val query = HtmlContentEntity.selectAll()
 
-        // Sorting
-        if (sort != null) {
-            result = when (sort) {
-                "htmlContentID" -> result.sortedBy { it.htmlContentID }
-                "countryID" -> result.sortedBy { it.countryID }
-                "dateAdded" -> result.sortedBy { it.dateAdded }
-                else -> result
+            if (countryID != null)
+                query.andWhere { HtmlContentEntity.countryID eq countryID }
+
+            val typeEnum = contentType?.let { HtmlContentType.valueOf(it.uppercase()) }
+            if (typeEnum != null)
+                query.andWhere { HtmlContentEntity.contentType eq typeEnum }
+
+            if (version != null)
+                query.andWhere { HtmlContentEntity.version eq version }
+
+            if (pageIndex != null)
+                query.andWhere { HtmlContentEntity.pageIndex eq pageIndex }
+
+            if (pageSource != null)
+                query.andWhere { HtmlContentEntity.pageSource eq pageSource }
+
+            val afterD = after?.let { LocalDate.parse(it) }
+            if (afterD != null)
+                query.andWhere { HtmlContentEntity.dateAdded greaterEq afterD }
+
+            val beforeD = before?.let { LocalDate.parse(it) }
+            if (beforeD != null)
+                query.andWhere { HtmlContentEntity.dateAdded lessEq beforeD }
+
+
+            var list = query.map { it.toHtmlContentFullDTO() }
+
+            if (latestOnly) {
+                list = list
+                    .groupBy { Triple(it.countryID, it.pageIndex, it.contentType) }
+                    .map { (_, entries) -> entries.maxBy { it.version ?: 0 } }
+                    .sortedBy { it.htmlContentID }
             }
-            if (order == "desc") result = result.reversed()
-        }
 
-        return PaginationUtils.paginate(
-            list = result,
-            page = page,
-            pageSize = PaginationConfig.htmlContentPageLimit
-        )
+            list = when (sort) {
+                "htmlContentID" -> list.sortedBy { it.htmlContentID }
+                "countryID"     -> list.sortedBy { it.countryID }
+                "dateAdded"     -> list.sortedBy { it.dateAdded }
+                else -> list
+            }
+
+            if (order == "desc") list = list.reversed()
+
+            PaginationUtils.paginate(
+                list = list,
+                page = page,
+                pageSize = PaginationConfig.htmlContentPageLimit
+            )
+        }
     }
 }

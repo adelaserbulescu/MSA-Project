@@ -15,6 +15,6 @@ fun ResultRow.toHtmlContentFullDTO(): HtmlContentFullDTO {
         version = this[HtmlContentEntity.version],
         pageIndex = this[HtmlContentEntity.pageIndex],
         pageSource = this[HtmlContentEntity.pageSource],
-        dateAdded = this[HtmlContentEntity.dateAdded].format(DateTimeFormatter.ISO_LOCAL_DATE_TIME),
+        dateAdded = this[HtmlContentEntity.dateAdded].format(DateTimeFormatter.ISO_LOCAL_DATE)
     )
 }

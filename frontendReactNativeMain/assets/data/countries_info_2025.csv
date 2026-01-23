@@ -1,4 +1,4 @@
-"country","demonym","id","iso2","tld","currency","population","density","area","gdp","median_age","language","website","calling_code","driving_side","continent","un_member","religion"
+"country","demonym","tag","iso2","tld","currency","population","density","area","gdp","median_age","language","website","calling_code","driving_side","continent","un_member","religion"
 "China","Chinese","CN","CN",".cn","Chinese Yuan","1413142846","147.2","9596960","17963170","39.8","Chinese","https://www.gov.cn","86","right","Asia","TRUE","No Religion"
 "India","Indian","IN","IN",".in","Indian Rupee","1399179585","425.6","3287263","3465541","29.5","Hindi","http://india.gov.in","91","left","Asia","TRUE","Hinduism"
 "United States","American","US","US",".us","United States Dollar","339665118","34.5","9833517","25744100","38.5","English","https://www.usa.gov","1","right","North America","TRUE","Christianity"
@@ -137,6 +137,7 @@
 "Albania","Albanian","AL","AL",".al","Albanian Lek","3101621","107.9","28748","18916","35.8","Albanian","https://www.kryeministria.al/en","355","right","Europe","TRUE","Islam"
 "Puerto Rico","Puerto Rican","PR","PR",".pr","United States Dollar","3057311","335.8","9104","113434","45.6","Spanish","https://pr.gov","1","right","North America","FALSE","Christianity"
 "Armenia","Armenian","AM","AM",".am","Armenian Dram","2989091","100.5","29743","19513","38.3","Armenian","http://www.gov.am/en","374","right","Asia","TRUE","Christianity"
+"West Bank","West Banker","XW","PS","","","2949246","521.5","5655","","","","https://www.pcbs.gov.ps/default.aspx","","right","Asia","FALSE","Islam"
 "Jamaica","Jamaican","JM","JM",".jm","Jamaican Dollar","2820982","256.7","10991","17097","30.5","English","https://www.gov.jm","1","left","North America","TRUE","Christianity"
 "Namibia","Namibian","NA","NA",".na","Namibian Dollar ","2777232","3.4","824292","12607","22.5","English","https://gov.na","","left","Africa","TRUE",""
 "Lithuania","Lithuanian","LT","LT",".lt","Euro","2655755","40.7","65300","70878","45","Lithuanian","https://www.lietuva.lt/en","370","right","Europe","TRUE","Christianity"

@@ -7,6 +7,7 @@ enum class MediaType {
     PAGE,
     VIDEO,
     ROUTE,
+    QUIZ,
     OTHER
 }
 

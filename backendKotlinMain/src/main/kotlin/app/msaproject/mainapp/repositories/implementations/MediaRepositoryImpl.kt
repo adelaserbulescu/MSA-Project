@@ -1,20 +1,30 @@
 package app.msaproject.mainapp.repositories.implementations
 
-import app.msaproject.mainapp.dtos.media.MediaFullDTO
-import app.msaproject.mainapp.dtos_mocks.media.MockedMediaData
-import app.msaproject.mainapp.repositories.interfaces.MediaRepository
 import app.msaproject.mainapp.configs.PaginationConfig
+import app.msaproject.mainapp.dtos.media.MediaFullDTO
 import app.msaproject.mainapp.dtos.pagination.PaginatedResponseDTO
+import app.msaproject.mainapp.dtos_formatters.toMediaFullDTO
+import app.msaproject.mainapp.entities.MediaEntity
+import app.msaproject.mainapp.entities.MediaType
+import app.msaproject.mainapp.repositories.interfaces.MediaRepository
 import app.msaproject.mainapp.utils.PaginationUtils
+import org.jetbrains.exposed.sql.*
+import org.jetbrains.exposed.sql.transactions.transaction
 
 class MediaRepositoryImpl : MediaRepository {
 
-    private val mediaList = MockedMediaData.mediaList
-
-    override suspend fun getAll(): List<MediaFullDTO> = mediaList
+    override suspend fun getAll(): List<MediaFullDTO> =
+        transaction {
+            MediaEntity.selectAll().map { it.toMediaFullDTO() }
+        }
 
     override suspend fun getById(mediaID: Int): MediaFullDTO? =
-        mediaList.find { it.mediaID == mediaID }
+        transaction {
+            MediaEntity
+                .select { MediaEntity.mediaID eq mediaID }
+                .map { it.toMediaFullDTO() }
+                .singleOrNull()
+        }
 
     override suspend fun getFiltered(
         countryID: Int?,
@@ -24,28 +34,34 @@ class MediaRepositoryImpl : MediaRepository {
         order: String?
     ): PaginatedResponseDTO<MediaFullDTO> {
 
-        var result = mediaList.filter { m ->
-            val countryMatches = countryID?.let { m.countryID == it } ?: true
-            val typeMatches = mediaType?.let { m.mediaType?.name.equals(it, ignoreCase = true) } ?: true
-            countryMatches && typeMatches
-        }
+        return transaction {
 
-        // Sorting
-        if (sort != null) {
-            result = when (sort) {
-                "mediaID" -> result.sortedBy { it.mediaID }
-                "countryID" -> result.sortedBy { it.countryID }
-                else -> result
+            val query = MediaEntity.selectAll()
+
+            if (countryID != null)
+                query.andWhere { MediaEntity.countryID eq countryID }
+
+            val typeEnum = mediaType?.let { MediaType.valueOf(it.uppercase()) }
+            if (typeEnum != null)
+                query.andWhere { MediaEntity.mediaType eq typeEnum }
+
+
+            val sorted = when (sort) {
+                "mediaID"   -> query.orderBy(MediaEntity.mediaID to sortOrder(order))
+                "countryID" -> query.orderBy(MediaEntity.countryID to sortOrder(order))
+                else -> query
             }
-            if (order == "desc") result = result.reversed()
+
+            val list = sorted.map { it.toMediaFullDTO() }
+
+            PaginationUtils.paginate(
+                list = list,
+                page = page,
+                pageSize = PaginationConfig.mediaPageLimit
+            )
         }
-
-        // Pagination
-        return PaginationUtils.paginate(
-            list = result,
-            page = page,
-            pageSize = PaginationConfig.mediaPageLimit
-        )
-
     }
+
+    private fun sortOrder(order: String?) =
+        if (order == "desc") SortOrder.DESC else SortOrder.ASC
 }

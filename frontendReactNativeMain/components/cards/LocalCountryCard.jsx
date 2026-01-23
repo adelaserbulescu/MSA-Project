@@ -1,14 +1,16 @@
 // components/LocalCountryCard.jsx
 import { View, Text, StyleSheet, Image, TouchableOpacity, Linking } from "react-native";
-import { Colors } from "../../../core/Colors";
-import { useThemeMode } from "../../../core/ThemeContext";
+import { Colors } from "../../core/Colors";
+import { useThemeMode } from "../../core/ThemeContext";
 
-import { flagMap } from "../../../core/FlagMap";
+import { flagMap } from "../../core/FlagMap";
 
 export default function LocalCountryCard({ country }) {
     const { activeTheme } = useThemeMode();
     const theme = Colors[activeTheme];
-    const flagPath = flagMap[country.id.toLowerCase()] || require("../../../assets/flag-icons/us.png");
+    const flagPath = flagMap[country.tag.toLowerCase()] || require("../../assets/flag-icons/us.png");
+    const hasWebsite = country.website && country.website.trim() !== "";
+
 
     function openWebsite() {
         if (country.website) {
@@ -17,17 +19,25 @@ export default function LocalCountryCard({ country }) {
     }
 
     return (
-        <View style={[styles.card, { backgroundColor: theme.card || theme.background }]}>
+        <View style={[styles.card, { backgroundColor: theme.card || theme.card_background }]}>
             <View style={styles.row}>
                 <View style={{ flex: 1 }}>
-                    <Text style={[styles.title, { color: theme.text }]}>{country.country}</Text>
+                    <Text style={[styles.title, { color: theme.text }]}>{country.country} </Text>
                     <Text style={[styles.sub, { color: theme.textSecondary || theme.text }]}>
-                        {country.demonym}
+                        [{country.tag}] - {country.demonym}
                     </Text>
                 </View>
 
                 <TouchableOpacity onPress={openWebsite}>
-                    <Image source={flagPath} style={styles.flag} />
+                    <View style={styles.flagContainer}>
+                        <Image source={flagPath} style={styles.flag} />
+                        {hasWebsite && (
+                            <Image
+                                source={require("../../assets/icons/media-page-dark.png")}
+                                style={styles.externalIcon}
+                            />
+                        )}
+                    </View>
                 </TouchableOpacity>
             </View>
 
@@ -54,16 +64,34 @@ const styles = StyleSheet.create({
         padding: 16,
         borderRadius: 12,
         marginBottom: 12,
-        elevation: 3,
+        // iOS Shadow Properties
+        shadowColor: '#000',
+        shadowOffset: { width: 0, height: 2 },
+        shadowOpacity: 0.25,
+        shadowRadius: 3.84,
+
+        // Android Shadow Property
+        elevation: 5,
     },
     row: {
         flexDirection: "row",
         alignItems: "center",
     },
     flag: {
-        width: 48,
-        height: 32,
+        width: 128,
+        height: 96,
         borderRadius: 4,
+    },
+    flagContainer: {
+        position: "relative",
+    },
+    externalIcon: {
+        position: "absolute",
+        bottom: 8,
+        right: 8,
+        width: 15,
+        height: 15,
+        opacity: 0.9,
     },
     title: {
         fontSize: 20,

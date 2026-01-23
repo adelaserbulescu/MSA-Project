@@ -14,6 +14,6 @@ fun ResultRow.toCountryGroupFullDTO(): CountryGroupFullDTO {
         groupType = this[CountryGroupEntity.groupType],
         dateStarted = this[CountryGroupEntity.dateStarted]?.format(DateTimeFormatter.ISO_LOCAL_DATE),
         dateEnded = this[CountryGroupEntity.dateEnded]?.format(DateTimeFormatter.ISO_LOCAL_DATE),
-        stillExists = this[CountryEntity.stillExists],
+        stillExists = this[CountryGroupEntity.stillExists],
     )
 }
