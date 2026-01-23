@@ -19,8 +19,8 @@ fun Application.module() {
     configureOpenApi();
     configureSerialization()
 
-    //DatabaseFactory.init();
-    //DatabaseFactory.check_status()
+    DatabaseFactory.init();
+    DatabaseFactory.check_status()
 
 
 }
