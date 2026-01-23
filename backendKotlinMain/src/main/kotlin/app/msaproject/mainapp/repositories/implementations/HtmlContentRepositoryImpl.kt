@@ -2,6 +2,7 @@ package app.msaproject.mainapp.repositories.implementations
 
 import app.msaproject.mainapp.configs.PaginationConfig
 import app.msaproject.mainapp.dtos.htmlcontent.HtmlContentFullDTO
+import app.msaproject.mainapp.dtos.htmlcontent.HtmlContentFullPostDTO
 import app.msaproject.mainapp.dtos.pagination.PaginatedResponseDTO
 import app.msaproject.mainapp.dtos_formatters.toHtmlContentFullDTO
 import app.msaproject.mainapp.entities.HtmlContentEntity
@@ -9,6 +10,7 @@ import app.msaproject.mainapp.entities.HtmlContentType
 import app.msaproject.mainapp.repositories.interfaces.HtmlContentRepository
 import app.msaproject.mainapp.utils.PaginationUtils
 import org.jetbrains.exposed.sql.*
+import org.jetbrains.exposed.sql.SqlExpressionBuilder.eq
 import org.jetbrains.exposed.sql.transactions.transaction
 import java.time.LocalDate
 
@@ -94,5 +96,34 @@ class HtmlContentRepositoryImpl : HtmlContentRepository {
                 pageSize = PaginationConfig.htmlContentPageLimit
             )
         }
+
+    }
+
+    override suspend fun create(dto: HtmlContentFullPostDTO): Int = transaction {
+        HtmlContentEntity.insert {
+            it[countryID] = dto.countryID
+            it[contentHtml] = dto.contentHtml
+            it[contentType] = dto.contentType ?: HtmlContentType.OTHER
+            it[version] = dto.version ?: 1
+            it[pageIndex] = dto.pageIndex ?: 0
+            it[pageSource] = dto.pageSource
+            it[dateAdded] = LocalDate.parse(dto.dateAdded)
+        }[HtmlContentEntity.htmlContentID]
+    }
+
+    override suspend fun update(id: Int, dto: HtmlContentFullPostDTO): Boolean = transaction {
+        HtmlContentEntity.update({ HtmlContentEntity.htmlContentID eq id }) {
+            it[countryID] = dto.countryID
+            it[contentHtml] = dto.contentHtml
+            it[contentType] = dto.contentType ?: HtmlContentType.OTHER
+            it[version] = dto.version ?: 1
+            it[pageIndex] = dto.pageIndex ?: 0
+            it[pageSource] = dto.pageSource
+            it[dateAdded] = LocalDate.parse(dto.dateAdded)
+        } > 0
+    }
+
+    override suspend fun delete(id: Int): Boolean = transaction {
+        HtmlContentEntity.deleteWhere { HtmlContentEntity.htmlContentID eq id } > 0
     }
 }

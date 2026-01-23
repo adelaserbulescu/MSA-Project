@@ -3,13 +3,18 @@ package app.msaproject.mainapp.routes
 import app.msaproject.mainapp.repositories.implementations.MediaRepositoryImpl
 import app.msaproject.mainapp.services.MediaService
 import app.msaproject.mainapp.dtos.media.MediaFullDTO
+import app.msaproject.mainapp.dtos.media.MediaFullPostDTO
 import app.msaproject.mainapp.dtos.pagination.PaginatedResponseDTO
 import app.msaproject.mainapp.entities.MediaType
 import io.github.smiley4.ktoropenapi.get
+import io.github.smiley4.ktoropenapi.post
+import io.github.smiley4.ktoropenapi.put
+import io.github.smiley4.ktoropenapi.delete
 import io.ktor.server.routing.*
 import io.ktor.server.application.*
 import io.ktor.server.response.*
 import io.ktor.http.*
+import io.ktor.server.request.receive
 
 fun Route.mediaRoutes() {
 
@@ -89,6 +94,51 @@ fun Route.mediaRoutes() {
             } else {
                 call.respond(media)
             }
+        }
+        post({
+            description = "Create a new media entry"
+            request { body<MediaFullPostDTO>() }
+            response { code(HttpStatusCode.Created) { body<Int>() } }
+        }) {
+            val dto = call.receive<MediaFullPostDTO>()
+            val newId = mediaService.create(dto)
+            call.respond(HttpStatusCode.Created, newId)
+        }
+
+        put("{id}", {
+            description = "Update a media entry's path or type (Image, Video, etc.)"
+            request {
+                pathParameter<Int>("id") { description = "The unique ID of the media entry" }
+                body<MediaFullPostDTO>()
+            }
+            response {
+                code(HttpStatusCode.OK) {
+                    description = "Successfully updated. Returns the updated MediaFullDTO"
+                    body<MediaFullDTO>()
+                }
+                code(HttpStatusCode.NotFound) { description = "Media entry not found" }
+            }
+        }) {
+            val id = call.parameters["id"]?.toIntOrNull() ?: return@put call.respond(HttpStatusCode.BadRequest)
+            val dto = call.receive<MediaFullPostDTO>()
+            if (mediaService.update(id, dto)) call.respond(HttpStatusCode.OK)
+            else call.respond(HttpStatusCode.NotFound)
+        }
+
+        delete("{id}", {
+            description = "Remove a media resource reference from the system"
+            request { pathParameter<Int>("id") { description = "The unique ID of the media entry to delete" } }
+            response {
+                code(HttpStatusCode.OK) {
+                    description = "Successfully deleted. Returns the deleted MediaFullDTO metadata"
+                    body<MediaFullDTO>()
+                }
+                code(HttpStatusCode.NotFound) { description = "Media entry not found" }
+            }
+        }) {
+            val id = call.parameters["id"]?.toIntOrNull() ?: return@delete call.respond(HttpStatusCode.BadRequest)
+            if (mediaService.delete(id)) call.respond(HttpStatusCode.NoContent)
+            else call.respond(HttpStatusCode.NotFound)
         }
     }
 }

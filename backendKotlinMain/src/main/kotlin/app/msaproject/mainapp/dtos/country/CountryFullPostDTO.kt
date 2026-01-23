@@ -1,0 +1,14 @@
+package app.msaproject.mainapp.dtos.country
+
+import kotlinx.serialization.Serializable
+
+@Serializable
+data class CountryFullPostDTO(
+    val groupID: Int,
+    val countryName: String,
+    val dateStarted: String? = null,
+    val dateEnded: String? = null,
+    val stillExists: Boolean,
+    val flagImagePath: String? = null,
+    val hexColor: String? = null
+)

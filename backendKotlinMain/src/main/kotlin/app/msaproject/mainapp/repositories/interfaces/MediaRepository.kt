@@ -1,6 +1,7 @@
 package app.msaproject.mainapp.repositories.interfaces
 
 import app.msaproject.mainapp.dtos.media.MediaFullDTO
+import app.msaproject.mainapp.dtos.media.MediaFullPostDTO
 import app.msaproject.mainapp.dtos.pagination.PaginatedResponseDTO
 
 interface MediaRepository {
@@ -16,4 +17,8 @@ interface MediaRepository {
         sort: String? = null,
         order: String? = null
     ): PaginatedResponseDTO<MediaFullDTO>
+
+    suspend fun create(dto: MediaFullPostDTO): Int
+    suspend fun update(id: Int, dto: MediaFullPostDTO): Boolean
+    suspend fun delete(id: Int): Boolean
 }

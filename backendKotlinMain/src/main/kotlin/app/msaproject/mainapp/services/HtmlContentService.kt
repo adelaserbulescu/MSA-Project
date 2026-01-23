@@ -1,6 +1,7 @@
 package app.msaproject.mainapp.services
 
 import app.msaproject.mainapp.dtos.htmlcontent.HtmlContentFullDTO
+import app.msaproject.mainapp.dtos.htmlcontent.HtmlContentFullPostDTO
 import app.msaproject.mainapp.dtos.pagination.PaginatedResponseDTO
 import app.msaproject.mainapp.repositories.interfaces.HtmlContentRepository
 
@@ -27,4 +28,10 @@ class HtmlContentService(private val repository: HtmlContentRepository) {
             countryID, contentType, version, pageIndex, pageSource,
             after, before, latestOnly, page, sort, order
         )
+
+    suspend fun create(dto: HtmlContentFullPostDTO) = repository.create(dto)
+
+    suspend fun update(id: Int, dto: HtmlContentFullPostDTO) = repository.update(id, dto)
+
+    suspend fun delete(id: Int) = repository.delete(id)
 }

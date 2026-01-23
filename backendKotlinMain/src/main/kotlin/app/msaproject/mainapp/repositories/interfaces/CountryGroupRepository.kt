@@ -1,6 +1,7 @@
 package app.msaproject.mainapp.repositories.interfaces
 
 import app.msaproject.mainapp.dtos.countrygroup.CountryGroupFullDTO
+import app.msaproject.mainapp.dtos.countrygroup.CountryGroupFullPostDTO
 import app.msaproject.mainapp.dtos.pagination.PaginatedResponseDTO
 
 interface CountryGroupRepository {
@@ -21,4 +22,8 @@ interface CountryGroupRepository {
         sort: String? = null,
         order: String? = null
     ): PaginatedResponseDTO<CountryGroupFullDTO>
+
+    suspend fun create(dto: CountryGroupFullPostDTO): Int
+    suspend fun update(id: Int, dto: CountryGroupFullPostDTO): Boolean
+    suspend fun delete(id: Int): Boolean
 }

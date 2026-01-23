@@ -2,6 +2,7 @@ package app.msaproject.mainapp.repositories.implementations
 
 import app.msaproject.mainapp.configs.PaginationConfig
 import app.msaproject.mainapp.dtos.countrygroup.CountryGroupFullDTO
+import app.msaproject.mainapp.dtos.countrygroup.CountryGroupFullPostDTO
 import app.msaproject.mainapp.dtos.pagination.PaginatedResponseDTO
 import app.msaproject.mainapp.dtos_formatters.toCountryGroupFullDTO
 import app.msaproject.mainapp.entities.CountryGroupEntity
@@ -9,6 +10,7 @@ import app.msaproject.mainapp.entities.GroupType
 import app.msaproject.mainapp.repositories.interfaces.CountryGroupRepository
 import app.msaproject.mainapp.utils.PaginationUtils
 import org.jetbrains.exposed.sql.*
+import org.jetbrains.exposed.sql.SqlExpressionBuilder.eq
 import org.jetbrains.exposed.sql.transactions.transaction
 import java.time.LocalDate
 
@@ -93,4 +95,29 @@ class CountryGroupRepositoryImpl : CountryGroupRepository {
 
     private fun sortOrder(order: String?) =
         if (order == "desc") SortOrder.DESC else SortOrder.ASC
+
+    override suspend fun create(dto: CountryGroupFullPostDTO): Int = transaction {
+        CountryGroupEntity.insert {
+            it[groupName] = dto.groupName
+            it[groupDescription] = dto.groupDescription
+            it[groupType] = dto.groupType ?: GroupType.OTHER
+            it[dateStarted] = dto.dateStarted?.let { d -> LocalDate.parse(d) }
+            it[dateEnded] = dto.dateEnded?.let { d -> LocalDate.parse(d) }
+            it[stillExists] = dto.stillExists ?: true
+        }[CountryGroupEntity.groupID]
+    }
+    override suspend fun update(id: Int, dto: CountryGroupFullPostDTO): Boolean = transaction {
+        CountryGroupEntity.update({ CountryGroupEntity.groupID eq id }) {
+            it[groupName] = dto.groupName
+            it[groupDescription] = dto.groupDescription
+            it[groupType] = dto.groupType ?: GroupType.OTHER
+            it[dateStarted] = dto.dateStarted?.let { d -> LocalDate.parse(d) }
+            it[dateEnded] = dto.dateEnded?.let { d -> LocalDate.parse(d) }
+            it[stillExists] = dto.stillExists ?: true
+        } > 0
+    }
+
+    override suspend fun delete(id: Int): Boolean = transaction {
+        CountryGroupEntity.deleteWhere { CountryGroupEntity.groupID eq id } > 0
+    }
 }

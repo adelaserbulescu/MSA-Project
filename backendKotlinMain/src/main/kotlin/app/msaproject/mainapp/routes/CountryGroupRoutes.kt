@@ -1,15 +1,20 @@
 package app.msaproject.mainapp.routes
 
 import app.msaproject.mainapp.dtos.countrygroup.CountryGroupFullDTO
+import app.msaproject.mainapp.dtos.countrygroup.CountryGroupFullPostDTO
 import app.msaproject.mainapp.dtos.pagination.PaginatedResponseDTO
 import app.msaproject.mainapp.entities.GroupType
 import app.msaproject.mainapp.repositories.implementations.CountryGroupRepositoryImpl
 import app.msaproject.mainapp.services.CountryGroupService
 import io.github.smiley4.ktoropenapi.get
+import io.github.smiley4.ktoropenapi.post
+import io.github.smiley4.ktoropenapi.put
+import io.github.smiley4.ktoropenapi.delete
 import io.ktor.server.routing.*
 import io.ktor.server.application.*
 import io.ktor.server.response.*
 import io.ktor.http.*
+import io.ktor.server.request.receive
 
 fun Route.countryGroupRoutes() {
 
@@ -120,6 +125,51 @@ fun Route.countryGroupRoutes() {
                 call.respond(HttpStatusCode.NotFound, "Group not found")
             else
                 call.respond(group)
+        }
+        post({
+            description = "Create a new country group"
+            request { body<CountryGroupFullPostDTO>() }
+            response { code(HttpStatusCode.Created) { body<Int>() } }
+        }) {
+            val dto = call.receive<CountryGroupFullPostDTO>()
+            val newId = service.create(dto)
+            call.respond(HttpStatusCode.Created, newId)
+        }
+
+        put("{id}", {
+            description = "Update an existing country group's details by its ID"
+            request {
+                pathParameter<Int>("id") { description = "The unique ID of the country group" }
+                body<CountryGroupFullPostDTO>()
+            }
+            response {
+                code(HttpStatusCode.OK) {
+                    description = "Successfully updated. Returns the updated CountryGroupFullDTO"
+                    body<CountryGroupFullDTO>()
+                }
+                code(HttpStatusCode.NotFound) { description = "Country group not found" }
+            }
+        }) {
+            val id = call.parameters["id"]?.toIntOrNull() ?: return@put call.respond(HttpStatusCode.BadRequest)
+            val dto = call.receive<CountryGroupFullPostDTO>()
+            if (service.update(id, dto)) call.respond(HttpStatusCode.OK)
+            else call.respond(HttpStatusCode.NotFound)
+        }
+
+        delete("{id}", {
+            description = "Permanently remove a country group from the database"
+            request { pathParameter<Int>("id") { description = "The unique ID of the country group to delete" } }
+            response {
+                code(HttpStatusCode.OK) {
+                    description = "Successfully deleted. Returns the deleted CountryGroupFullDTO metadata"
+                    body<CountryGroupFullDTO>()
+                }
+                code(HttpStatusCode.NotFound) { description = "Country group not found" }
+            }
+        }) {
+            val id = call.parameters["id"]?.toIntOrNull() ?: return@delete call.respond(HttpStatusCode.BadRequest)
+            if (service.delete(id)) call.respond(HttpStatusCode.NoContent)
+            else call.respond(HttpStatusCode.NotFound)
         }
     }
 }

@@ -2,12 +2,14 @@ package app.msaproject.mainapp.repositories.implementations
 
 import app.msaproject.mainapp.configs.PaginationConfig
 import app.msaproject.mainapp.dtos.country.CountryFullDTO
+import app.msaproject.mainapp.dtos.country.CountryFullPostDTO
 import app.msaproject.mainapp.dtos.pagination.PaginatedResponseDTO
 import app.msaproject.mainapp.dtos_formatters.toCountryFullDTO
 import app.msaproject.mainapp.entities.CountryEntity
 import app.msaproject.mainapp.repositories.interfaces.CountryRepository
 import app.msaproject.mainapp.utils.PaginationUtils
 import org.jetbrains.exposed.sql.*
+import org.jetbrains.exposed.sql.SqlExpressionBuilder.eq
 import org.jetbrains.exposed.sql.transactions.transaction
 import java.time.LocalDate
 
@@ -89,4 +91,32 @@ class CountryRepositoryImpl : CountryRepository {
 
     private fun sortOrder(order: String?) =
         if (order == "desc") SortOrder.DESC else SortOrder.ASC
+
+    override suspend fun create(dto: CountryFullPostDTO): Int = transaction {
+        CountryEntity.insert {
+            it[groupID] = dto.groupID
+            it[countryName] = dto.countryName
+            it[dateStarted] = dto.dateStarted?.let { d -> LocalDate.parse(d) }
+            it[dateEnded] = dto.dateEnded?.let { d -> LocalDate.parse(d) }
+            it[stillExists] = dto.stillExists
+            it[flagImagePath] = dto.flagImagePath
+            it[hexColor] = dto.hexColor
+        }[CountryEntity.countryID]
+    }
+
+    override suspend fun update(id: Int, dto: CountryFullPostDTO): Boolean = transaction {
+        CountryEntity.update({ CountryEntity.countryID eq id }) {
+            it[groupID] = dto.groupID
+            it[countryName] = dto.countryName
+            it[dateStarted] = dto.dateStarted?.let { d -> LocalDate.parse(d) }
+            it[dateEnded] = dto.dateEnded?.let { d -> LocalDate.parse(d) }
+            it[stillExists] = dto.stillExists
+            it[flagImagePath] = dto.flagImagePath
+            it[hexColor] = dto.hexColor
+        } > 0
+    }
+
+    override suspend fun delete(id: Int): Boolean = transaction {
+        CountryEntity.deleteWhere { CountryEntity.countryID eq id } > 0
+    }
 }

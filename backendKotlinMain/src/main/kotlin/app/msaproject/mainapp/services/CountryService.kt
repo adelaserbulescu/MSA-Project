@@ -1,5 +1,6 @@
 package app.msaproject.mainapp.services
 
+import app.msaproject.mainapp.dtos.country.CountryFullPostDTO
 import app.msaproject.mainapp.repositories.interfaces.CountryRepository
 
 class CountryService(
@@ -33,4 +34,10 @@ class CountryService(
         order,
         page
     )
+
+    suspend fun create(dto: CountryFullPostDTO) = repository.create(dto)
+
+    suspend fun update(id: Int, dto: CountryFullPostDTO) = repository.update(id, dto)
+
+    suspend fun delete(id: Int) = repository.delete(id)
 }

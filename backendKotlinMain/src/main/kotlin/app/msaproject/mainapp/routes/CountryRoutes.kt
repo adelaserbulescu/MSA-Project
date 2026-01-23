@@ -3,11 +3,16 @@ package app.msaproject.mainapp.routes
 import app.msaproject.mainapp.repositories.implementations.CountryRepositoryImpl
 import app.msaproject.mainapp.services.CountryService
 import app.msaproject.mainapp.dtos.country.CountryFullDTO
+import app.msaproject.mainapp.dtos.country.CountryFullPostDTO
 import app.msaproject.mainapp.dtos.pagination.PaginatedResponseDTO
 import io.github.smiley4.ktoropenapi.get
+import io.github.smiley4.ktoropenapi.post
+import io.github.smiley4.ktoropenapi.put
+import io.github.smiley4.ktoropenapi.delete
 import io.ktor.server.routing.*
 import io.ktor.server.response.*
 import io.ktor.http.*
+import io.ktor.server.request.receive
 
 fun Route.countryRoutes() {
 
@@ -139,6 +144,51 @@ fun Route.countryRoutes() {
             } else {
                 call.respond(country)
             }
+        }
+        post({
+            description = "Create a new country"
+            request { body<CountryFullPostDTO>() }
+            response { code(HttpStatusCode.Created) { body<Int>() } }
+        }) {
+            val dto = call.receive<CountryFullPostDTO>()
+            val newId = countryService.create(dto)
+            call.respond(HttpStatusCode.Created, newId)
+        }
+
+        put("{id}", {
+            description = "Update an existing country's information (name, dates, existence status)"
+            request {
+                pathParameter<Int>("id") { description = "The unique ID of the country" }
+                body<CountryFullPostDTO>()
+            }
+            response {
+                code(HttpStatusCode.OK) {
+                    description = "Successfully updated. Returns the updated CountryFullDTO"
+                    body<CountryFullDTO>()
+                }
+                code(HttpStatusCode.NotFound) { description = "Country not found" }
+            }
+        }) {
+            val id = call.parameters["id"]?.toIntOrNull() ?: return@put call.respond(HttpStatusCode.BadRequest)
+            val dto = call.receive<CountryFullPostDTO>()
+            if (countryService.update(id, dto)) call.respond(HttpStatusCode.OK)
+            else call.respond(HttpStatusCode.NotFound)
+        }
+
+        delete("{id}", {
+            description = "Remove a country record. Warning: This may fail if linked to Media or HTML content"
+            request { pathParameter<Int>("id") { description = "The unique ID of the country to delete" } }
+            response {
+                code(HttpStatusCode.OK) {
+                    description = "Successfully deleted. Returns the deleted CountryFullDTO metadata"
+                    body<CountryFullDTO>()
+                }
+                code(HttpStatusCode.NotFound) { description = "Country not found" }
+            }
+        }) {
+            val id = call.parameters["id"]?.toIntOrNull() ?: return@delete call.respond(HttpStatusCode.BadRequest)
+            if (countryService.delete(id)) call.respond(HttpStatusCode.NoContent)
+            else call.respond(HttpStatusCode.NotFound)
         }
     }
 }

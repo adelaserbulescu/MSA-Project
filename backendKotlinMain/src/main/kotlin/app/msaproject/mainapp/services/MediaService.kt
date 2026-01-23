@@ -1,6 +1,7 @@
 package app.msaproject.mainapp.services
 
 import app.msaproject.mainapp.dtos.media.MediaFullDTO
+import app.msaproject.mainapp.dtos.media.MediaFullPostDTO
 import app.msaproject.mainapp.dtos.pagination.PaginatedResponseDTO
 import app.msaproject.mainapp.repositories.interfaces.MediaRepository
 
@@ -18,4 +19,10 @@ class MediaService(private val repository: MediaRepository) {
         order: String?
     ): PaginatedResponseDTO<MediaFullDTO> =
         repository.getFiltered(countryID, mediaType, page, sort, order)
+
+    suspend fun create(dto: MediaFullPostDTO) = repository.create(dto)
+
+    suspend fun update(id: Int, dto: MediaFullPostDTO) = repository.update(id, dto)
+
+    suspend fun delete(id: Int) = repository.delete(id)
 }

@@ -3,13 +3,18 @@ package app.msaproject.mainapp.routes
 import app.msaproject.mainapp.repositories.implementations.HtmlContentRepositoryImpl
 import app.msaproject.mainapp.services.HtmlContentService
 import app.msaproject.mainapp.dtos.htmlcontent.HtmlContentFullDTO
+import app.msaproject.mainapp.dtos.htmlcontent.HtmlContentFullPostDTO
 import app.msaproject.mainapp.dtos.pagination.PaginatedResponseDTO
 import app.msaproject.mainapp.entities.HtmlContentType
 import io.github.smiley4.ktoropenapi.get
+import io.github.smiley4.ktoropenapi.post
+import io.github.smiley4.ktoropenapi.put
+import io.github.smiley4.ktoropenapi.delete
 import io.ktor.server.routing.*
 import io.ktor.server.application.*
 import io.ktor.server.response.*
 import io.ktor.http.*
+import io.ktor.server.request.receive
 
 fun Route.htmlContentRoutes() {
 
@@ -122,6 +127,51 @@ fun Route.htmlContentRoutes() {
             if (obj == null) {
                 call.respond(HttpStatusCode.NotFound, "HTML content not found")
             } else call.respond(obj)
+        }
+        post({
+            description = "Create a new HTML content entry"
+            request { body<HtmlContentFullPostDTO>() }
+            response { code(HttpStatusCode.Created) { body<Int>() } }
+        }) {
+            val dto = call.receive<HtmlContentFullPostDTO>()
+            val newId = service.create(dto)
+            call.respond(HttpStatusCode.Created, newId)
+        }
+
+        put("{id}", {
+            description = "Update specific HTML content block, including versioning and page index"
+            request {
+                pathParameter<Int>("id") { description = "The unique ID of the HTML content entry" }
+                body<HtmlContentFullPostDTO>()
+            }
+            response {
+                code(HttpStatusCode.OK) {
+                    description = "Successfully updated. Returns the updated HtmlContentFullDTO"
+                    body<HtmlContentFullDTO>()
+                }
+                code(HttpStatusCode.NotFound) { description = "HTML content entry not found" }
+            }
+        }) {
+            val id = call.parameters["id"]?.toIntOrNull() ?: return@put call.respond(HttpStatusCode.BadRequest)
+            val dto = call.receive<HtmlContentFullPostDTO>()
+            if (service.update(id, dto)) call.respond(HttpStatusCode.OK)
+            else call.respond(HttpStatusCode.NotFound)
+        }
+
+        delete("{id}", {
+            description = "Delete a specific HTML content version/entry"
+            request { pathParameter<Int>("id") { description = "The unique ID of the HTML content to delete" } }
+            response {
+                code(HttpStatusCode.OK) {
+                    description = "Successfully deleted. Returns the deleted HtmlContentFullDTO metadata"
+                    body<HtmlContentFullDTO>()
+                }
+                code(HttpStatusCode.NotFound) { description = "HTML content entry not found" }
+            }
+        }) {
+            val id = call.parameters["id"]?.toIntOrNull() ?: return@delete call.respond(HttpStatusCode.BadRequest)
+            if (service.delete(id)) call.respond(HttpStatusCode.NoContent)
+            else call.respond(HttpStatusCode.NotFound)
         }
     }
 }

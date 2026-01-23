@@ -2,6 +2,7 @@ package app.msaproject.mainapp.repositories.implementations
 
 import app.msaproject.mainapp.configs.PaginationConfig
 import app.msaproject.mainapp.dtos.media.MediaFullDTO
+import app.msaproject.mainapp.dtos.media.MediaFullPostDTO
 import app.msaproject.mainapp.dtos.pagination.PaginatedResponseDTO
 import app.msaproject.mainapp.dtos_formatters.toMediaFullDTO
 import app.msaproject.mainapp.entities.MediaEntity
@@ -9,6 +10,7 @@ import app.msaproject.mainapp.entities.MediaType
 import app.msaproject.mainapp.repositories.interfaces.MediaRepository
 import app.msaproject.mainapp.utils.PaginationUtils
 import org.jetbrains.exposed.sql.*
+import org.jetbrains.exposed.sql.SqlExpressionBuilder.eq
 import org.jetbrains.exposed.sql.transactions.transaction
 
 class MediaRepositoryImpl : MediaRepository {
@@ -64,4 +66,24 @@ class MediaRepositoryImpl : MediaRepository {
 
     private fun sortOrder(order: String?) =
         if (order == "desc") SortOrder.DESC else SortOrder.ASC
+
+    override suspend fun create(dto: MediaFullPostDTO): Int = transaction {
+        MediaEntity.insert {
+            it[countryID] = dto.countryID
+            it[mediaType] = dto.mediaType ?: MediaType.OTHER
+            it[mediaPath] = dto.mediaPath
+        }[MediaEntity.mediaID]
+    }
+
+    override suspend fun update(id: Int, dto: MediaFullPostDTO): Boolean = transaction {
+        MediaEntity.update({ MediaEntity.mediaID eq id }) {
+            it[countryID] = dto.countryID
+            it[mediaType] = dto.mediaType ?: MediaType.OTHER
+            it[mediaPath] = dto.mediaPath
+        } > 0
+    }
+
+    override suspend fun delete(id: Int): Boolean = transaction {
+        MediaEntity.deleteWhere { MediaEntity.mediaID eq id } > 0
+    }
 }
